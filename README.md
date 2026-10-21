@@ -143,7 +143,7 @@ Yahoo registration is never completed (every negative row contains something Yah
 | `Calculator/Build_<n>/Test_Report.pdf` | **Test report.** Per test case: header (test case name, test data, pre-condition, total status) and a steps table (test status, test step, picture, expected; actual for failed steps) |
 | `Calculator/Defect_Report.pdf` | **Defect report** (Builds 1-9, one row per bug symptom): description, ref. test cases, expected, actual, picture of the actual result |
 | `Calculator/Test_Result_Summary.pdf` | **Result summary** of all builds: pass/fail count per build and a test case x build matrix |
-| `Yahoo_UI/`, `FakeRest_API/` | `Test_Report.pdf` and `Defect_Report.pdf` of Ex. 3 and Ex. 4 (API steps show the request/response text instead of a picture) |
+| `Yahoo_UI/`, `FakeRest_API/` | `Test_Report.pdf` and `Defect_Report.pdf` of Ex. 3 and Ex. 4 (API steps: the picture shows the request, status and response body) |
 | `Robot/.../report.html`, `log.html`, `output.xml` | Standard Robot Framework HTML report/log |
 | `*/evidence/*.jpeg`, `results.jsonl`, `defects.jsonl` | Pictures and raw records the PDFs are built from |
 

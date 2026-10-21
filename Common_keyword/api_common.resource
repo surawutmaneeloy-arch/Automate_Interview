@@ -2,6 +2,7 @@
 Documentation       Common API keywords (RequestsLibrary + jsonschema). The base URL is configuration:
 ...                 robot.toml [variables] API_BASE_URL or `--variable API_BASE_URL:<url>`.
 Library             RequestsLibrary
+Library             Browser    auto_closing_level=MANUAL
 Library             Collections
 Library             OperatingSystem
 Library             TestRecorder.py
@@ -81,6 +82,15 @@ Verify Response Echoes Request
     Should Be Empty    ${diff}    Response differs from request: ${diff}
 
 Capture Api Evidence
-    [Documentation]    API tests have no picture; the request/response text is printed in the report instead.
+    [Documentation]    Picture of the request/response: the text is rendered in a headless browser page and captured.
     [Arguments]    ${step_no}
-    RETURN    ${EMPTY}
+    ${base}=    Evidence Path    ${step_no}
+    ${text}=    Get Variable Value    ${STEP_EVIDENCE}    ${EMPTY}
+    IF    not $text    VAR    ${text}    No request/response was recorded for this step
+    ${url}=    Evidence Data Url    ${text}
+    New Page    ${url}
+    ${status}    ${path}=    Run Keyword And Ignore Error
+    ...    Take Screenshot    ${base}    selector=css=#evidence    fileType=jpeg    quality=85
+    Close Page    CURRENT
+    IF    "${status}" == "FAIL"    RETURN    ${EMPTY}
+    RETURN    ${path}

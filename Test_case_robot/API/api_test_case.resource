@@ -2,7 +2,7 @@
 Documentation       Test case keywords of the FakeRESTApi tests: each keyword is one test (or one row of the
 ...                 data-driven negative table) written as steps built from the API process keywords.
 ...                 All test data (paths, bodies, expected status) arrives as arguments from the test script
-...                 (Test_script/fakerest_api).
+...                 (Test_case_robot/API).
 Resource            ../../Common_keyword/common.resource
 Resource            ../../Common_keyword/report.resource
 Resource            ../../Process_keyword/api_process.resource
@@ -15,9 +15,13 @@ ${REPORT_SUITE}     FakeRest_API
 *** Keywords ***
 Start Api Suite
     Set Suite Variable    ${CAPTURE_KEYWORD}    Capture Api Evidence    children=${TRUE}
+    Set Suite Variable    &{VIEWPORT}    width=900    height=500    children=${TRUE}
     Start Api Session
+    Start Browser Session
+    Open New Context
 
 Finish Api Suite
+    Stop Browser Session
     Export Pdf Reports    ${REPORT_SUITE}    FakeRESTApi - Books (API)
 
 Prepare Api Test
