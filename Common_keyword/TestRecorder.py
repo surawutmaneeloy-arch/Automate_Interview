@@ -7,7 +7,9 @@ import re
 import shutil
 from collections import OrderedDict
 from datetime import datetime
+from html import escape
 from pathlib import Path
+from urllib.parse import quote
 
 from robot.api.deco import keyword, library
 from robot.libraries.BuiltIn import BuiltIn
@@ -68,6 +70,14 @@ class TestRecorder:
         """Absolute file name (without extension) for the picture of a step."""
         c = self.current
         return str(c["_dir"] / "evidence" / f"{_safe(c['tc_id'])}_step{step_no}")
+
+    @keyword("Evidence Data Url")
+    def evidence_data_url(self, text):
+        """data: URL of a small page that shows ``text`` (API request/response) so it can be captured as a picture."""
+        page = ("<body style='margin:0;background:#fff'><div id='evidence' style='display:inline-block;max-width:520px;"
+                "padding:12px;font:16px/1.4 Consolas,monospace;border:1px solid #888'>"
+                f"<pre style='margin:0;white-space:pre-wrap;word-break:break-all'>{escape(str(text))}</pre></div></body>")
+        return "data:text/html;charset=utf-8," + quote(page)
 
     @keyword("Add Step Record")
     def add_step_record(self, description, expected, status, actual="", picture="", evidence_text=""):

@@ -55,7 +55,7 @@ Test_case_robot/       4. test case robot: per project folder = the runnable .ro
    Python is allowed only as Robot libraries/variable files inside `Common_keyword/` and `Test_case_robot/`.
 2. **Every step captures a picture at its expected result** (pass or fail). Do it only through `Run Test Step`;
    a suite chooses the capture keyword with `${CAPTURE_KEYWORD}` (`Capture Page/Calculator/Yahoo/Api Evidence`).
-   API tests have no picture; the request/response text is shown instead.
+   API tests have no UI: `Capture Api Evidence` renders the request, status and response body in a headless page and captures that.
 3. **Test report = PDF.** Header: test case name, test data, pre-condition, total status.
    Rows: test status, test step, picture (between step and expected), expected.
 4. **Defect report = PDF table:** defect description, ref. test case, expected, actual, picture of actual result.
