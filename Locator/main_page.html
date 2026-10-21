@@ -1,0 +1,560 @@
+<body id="page-top">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div id="mainNavigation"><nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="./index.html#page-top">TestSheepNZ</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="./index.html#the-number-game">Number Game</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="./index.html#test-automation-resources">Automation Kata</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="./index.html#workshop-material">Workshops</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="./index.html#media">Media</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="./index.html#mike-talks">Mike Talks</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav></div>
+  </nav>
+
+
+  <!-- Header -->
+    <!-- Header -->
+    <header class="masthead">
+        <div class="container">
+            <div class="intro-text">
+                <div class="intro-heading text-uppercase">Basic Calculator</div>
+                <div class="intro-lead-in">Selenium Object</div>
+            </div>
+        </div>
+    </header>
+
+  <!-- Contents -->
+  <section class="bg-light page-section" id="main-body">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-left">
+
+                <h1>Instructions</h1>
+                <p>
+                </p><p>The following page is a very basic calculator - I know you have one on your phone, so why do you need another one?</p>
+                <p>The purpose of this page is to provide an object with basic functionality for you to try your first attempt to use a test tool on.</p>
+                <p>You can add/subtract/divide/multiply - all mathematical functions. When chosen, the page checks that you've entered numerical values. You can also toggle whether you want your answer as an integer value.</p>
+                <p>If you choose to concatonate, the system treats the inputs as strings, and won't check numerical values. You'll also not be able to select to get an integer value answer.</p>  
+                <p>
+
+                </p><p><i>There are multiple builds available. <b>Prototype</b> works perfectly, whereas builds 1-8 have problems. A good set of tests should help identify what the problems are.</i></p>
+
+                <div class="row">
+
+                  <div class="col-sm-3">
+                    <label class="description">Build</label>
+                  </div>
+                  
+                  <div class="col-sm-7">
+                      <select class="element select medium" id="selectBuild" data-testid="selectBuild" name="selectBuild" onchange="buildChanged(this.preset)"> 
+                          <option value="0">Prototype</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                      </select>
+                  </div>
+                  <div class="col-sm-2"></div>
+                </div>
+              
+                <form id="errorForm" data-testid="errorForm" class="form-horizontal" method="post" action="">
+                    <h3><font color="red"><i><label id="errorMsgField" data-testid="errorMsgField"></label></i></font></h3>
+                </form>
+
+                <form id="calcForm" data-testid="calcForm" class="form-horizontal" method="post" action="">
+
+                  <h2>Calculate</h2>
+
+                    
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <label class="description">First number</label>
+                    </div>
+                    <div class="col-sm-7">
+                      <input id="number1Field" data-testid="number1Field" name="number1" class="element text medium" type="text" maxlength="10" value=""> 
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-sm-3">
+                      <label class="description">Second number</label>
+                    </div>
+                    <div class="col-sm-7">
+                      <input id="number2Field" data-testid="number2Field" name="number2" class="element text medium" type="text" maxlength="10" value=""> 
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+
+
+                  <div class="row">
+
+                    <div class="col-sm-3">
+                      <label class="description">Operation</label>
+                    </div>
+                    
+                    <div class="col-sm-7">
+                        <select class="element select medium" id="selectOperationDropdown" data-testid="selectOperationDropdown" name="selectOperation" onchange="operationChanged(this.preset)"> 
+                            <option value="0">Add</option>
+                            <option value="1">Subtract</option>
+                            <option value="2">Multiply</option>
+                            <option value="3">Divide</option>
+                            <option value="4">Concatenate</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-2"></div>
+                  </div>
+
+                  <div class="row">
+              
+                      <div class="col-sm-3"></div>
+                      <div class="col-sm-7">
+                          <input type="button" class="btn btn-primary" id="calculateButton" data-testid="calculateButton" value="Calculate" onclick="calculate()"> 
+                          <p></p>
+                      </div>
+                      <div class="col-sm-2"></div>
+                    </div>
+                </form>
+
+                  <form id="calculatingForm" class="form-horizontal" method="post" action="" hidden="">
+                    <div class="row">
+                      <div class="col-sm-12"><h2>Calculating ...</h2></div>        
+                    </div>
+                    <p>
+                
+                    </p><div class="row" id="waitGraphic">
+                      <div class="col-sm-12" id="processingGraphic" data-testid="processingGraphic">
+                        <img src="img/waiting.gif">
+                      </div>
+                    </div>
+                  </form>
+                  
+                  <form id="answerForm" class="form-horizontal" method="post" action="">
+                    <div class="row">
+
+                      <div class="col-sm-3">
+                        <label class="description">Answer</label>
+                      </div>
+                      <div class="col-sm-7">
+                        <input id="numberAnswerField" data-testid="numberAnswerField" name="numberAnswer" class="element text medium" type="text" maxlength="10" value="" readonly=""> 
+                      </div>
+                      <div class="col-sm-2"></div>
+                    </div>
+
+                    <div class="row">
+                
+                      <div class="col-sm-3"><label class="description" id="intSelectionLabel"><i>Integers only</i></label></div>
+                      <div class="col-sm-7">
+                        <span onchange="displayAnswer()">
+                          <input id="integerSelect" data-testid="integerSelect" name="intSelection" class="element checkbox" type="checkbox" value="1">
+                        </span> 
+                      </div>
+                      <div class="col-sm-2"></div>
+                    </div>
+                  </form>
+
+                  <p></p>
+
+                  <form id="resetForm" class="form-horizontal" method="post" action="">
+  
+                  <div class="row">
+
+                      <div class="col-sm-3"></div>
+                      <div class="col-sm-7">
+                          <input type="button" class="btn btn-secondary" id="clearButton" data-testid="clearButton" value="Clear" onclick="clearAnswer()">
+                      </div>
+                      <div class="col-sm-2"></div>
+                    </div>
+                    <p></p>
+
+                </form>
+                <p></p>
+
+            
+              
+
+            </div>
+          </div>
+      </div>
+    </section>
+    
+  
+  
+  
+    <!-- Modal 1 -->
+    <div class="portfolio-modal modal fade" id="termsModal" tabindex="-1" role="dialog" aria-hidden="true">    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                <!-- Project Details Go Here -->
+                <h2 class="text-uppercase">Terms of use</h2>
+                <p class="item-intro text-muted">You are free to use the material here for your own learning, or learning within your teams. But please always show attribution to me as the originator.</p>
+                <p>Use of material for submission to conference or paid workshop is restricted. <br>Please contact me first.</p>
+                <button class="btn btn-primary" data-dismiss="modal" type="button">
+                  <i class="fas fa-times"></i>
+                  Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div></div>
+  
+    <!-- Modal 2 -->
+    <div class="portfolio-modal modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-hidden="true">      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <!-- Project Details Go Here -->
+                  <h2 class="text-uppercase">About</h2>
+                  <p class="item-intro text-muted">Whilst material is based on real projects, no confidential information or intellectual property has been reproduced.</p>
+                  <p>All material owned by Mike Talks.</p>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fas fa-times"></i>
+                    Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></div>
+  
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright © Mike Talks 2020</span>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline social-buttons">
+              <li class="list-inline-item">
+                <a href="https://twitter.com/TestSheepNZ">
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </li>
+              <li class="list-inline-item" hidden="">
+                <a href="#">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://www.linkedin.com/in/mike-talks-3423348/">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li class="list-inline-item">
+                <a data-toggle="modal" href="#aboutModal">About</a>
+              </li>
+              <li class="list-inline-item">
+                <a data-toggle="modal" href="#termsModal">Terms of Use</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+  
+  
+  
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  
+    <!-- Contact form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+  
+    <!-- Custom scripts for this template -->
+    <script src="js/agency.min.js"></script>
+  
+    <!-- Sets up the header-->
+    <script src="js/main.navigation.js"></script> 
+  
+    <!-- Footer Modals -->
+    <script src="js/footer.modals.js"></script> 
+
+    <script>
+
+      // Utility functions
+      var errorMsg = "";
+      var answer = "";
+      var isNumber=true;
+      var selectedBuild=0;
+
+      /*
+       * BUILD DESCRIPTOR
+       * 0 - all is good
+       * 1 - doesn't check for valid numbers
+       * 2 - add and concatonate are the wrong way around
+       * 3 - always treats like a number
+       * 4 - locked on integer
+       * 5 - Clear button unavailable
+       * 6 - Divide by zero not checked
+       * 7 - Uses answer, not number 1 as first for operation
+       * 8 - Switches numbers 1 and 2 around
+       * 9 - Elements vanish
+       */
+
+      function setStatusError() {
+        console.log("setStatusError");
+        document.getElementById('errorMsgField').innerHTML = errorMsg;
+      }
+
+      function setIfMathematical() {
+        var selection = document.getElementById('selectOperationDropdown').value;
+
+        if (selectedBuild != 3) {
+          isNumber = (selection != 4);
+        } else {
+          isNumber = true;
+        }
+      }
+      
+
+      function lockCalculate() {
+          document.getElementById('calculateButton').disabled = true;
+          document.getElementById('clearButton').disabled = true;
+          document.getElementById('calculatingForm').hidden = false;
+          document.getElementById('answerForm').hidden = true;
+      }
+
+  
+      function unlockCalculate() {
+          document.getElementById('calculateButton').disabled = false;
+          document.getElementById('clearButton').disabled = false;
+          document.getElementById('calculatingForm').hidden = true;
+          document.getElementById('answerForm').hidden = false;
+      }
+
+      // Calculate
+      function calculate() {
+        console.log("calculateNumber");
+        errorMsg = "";
+        setIfMathematical();
+
+        lockCalculate();
+
+        var selection = document.getElementById('selectOperationDropdown').value;
+
+        // Applying build 2 oddball
+        if (selectedBuild == 2) {
+          if (selection == 0) {
+            selection = 4;
+            isNumber = false;
+          } else if (selection == 4) {
+            selection = 0;
+            isNumber = true;
+          }
+          
+        }
+                
+        var num1 = document.getElementById('number1Field').value;
+        var num2 = document.getElementById('number2Field').value;
+
+        if (selectedBuild == 7) {
+          num1 = answer;
+        } else if (selectedBuild == 8) {
+          var temp = num1;
+          num1 = num2;
+          num2 = temp;
+        }
+        
+        if(isNaN(num1) && isNumber && selectedBuild != 1) {
+          errorMsg = "Number 1 is not a number";
+          setStatusError();
+          unlockCalculate();
+          return;
+        }
+        
+        if(isNaN(num2)  && isNumber && selectedBuild != 1) {
+          errorMsg = "Number 2 is not a number";
+          setStatusError();
+          unlockCalculate();
+          return;
+        }
+        
+
+
+      
+        console.log("Dropdown selected:" + selection);
+      
+        switch (+selection) {
+          case 0:
+            answer = +num1 + +num2;
+            break;
+          case 1:
+            answer = num1 - num2;
+            break;
+          case 2:
+            answer = num1 * num2;
+            break;
+          case 3:
+            if(num2==0 && selectedBuild != 6 ) {
+              errorMsg = "Divide by zero error!";
+              setStatusError();
+              return;
+            }
+            answer = num1 / num2;
+            break;
+          default:
+            answer = num1 + num2;
+            break;
+        }
+
+        displayAnswer();
+        setStatusError();
+
+        var randomTimeout = parseInt(Math.random() * 1000);
+        setTimeout(function() {
+          unlockCalculate();
+        }, randomTimeout);
+
+      }
+
+     
+      // Clear answer
+      function clearAnswer() {
+        console.log("clearAnswer");
+        errorMsg = "";
+        answer="";
+        document.getElementById('numberAnswerField').value = answer;
+        document.getElementById('integerSelect').checked = false;
+        setStatusError();
+      }
+
+      // Integers only
+      function displayAnswer() {
+        console.log("displayAnswer");
+        display = answer;
+
+        if (document.getElementById('integerSelect').checked && answer != ""){
+          display = parseInt(answer);
+        }
+        document.getElementById('numberAnswerField').value = display;
+      }
+
+      // Build changes
+      function buildChanged() {
+        console.log("buildChanged");
+
+        selectedBuild = document.getElementById('selectBuild').value;
+        setIfMathematical();
+        setFieldStatus();
+
+        if (selectedBuild == 5) {
+          document.getElementById('clearButton').disabled = true;
+        } else {
+          document.getElementById('clearButton').disabled = false;
+        }
+
+        if (selectedBuild == 9) {
+          document.getElementById('number2Field').hidden = true;
+          document.getElementById('number2Field').disabled = true;
+          document.getElementById('calculateButton').hidden = true;
+          document.getElementById('calculateButton').disabled = true;
+        } else {
+          document.getElementById('number2Field').hidden = false;
+          document.getElementById('number2Field').disabled = false;
+          document.getElementById('calculateButton').hidden = false;
+          document.getElementById('calculateButton').disabled = false;
+        }
+
+      }
+
+      // Operation changed
+      function operationChanged() {
+        console.log("operationChanged");
+        setIfMathematical();
+        setFieldStatus();
+
+      }
+
+      function setFieldStatus() {
+
+        if( selectedBuild != 4) {
+          if( isNumber ) {
+            document.getElementById('integerSelect').disabled = false;
+            document.getElementById('integerSelect').hidden = false;
+            document.getElementById('intSelectionLabel').hidden = false;
+          } else {
+            document.getElementById('integerSelect').disabled = true;
+            document.getElementById('integerSelect').checked = false;
+            document.getElementById('integerSelect').hidden = true;
+            document.getElementById('intSelectionLabel').hidden = true;
+          } 
+        } else {
+          if( isNumber ) {
+            document.getElementById('integerSelect').disabled = true;
+            document.getElementById('integerSelect').checked = true;
+            document.getElementById('integerSelect').hidden = false;
+            document.getElementById('intSelectionLabel').hidden = false;
+          } else {
+            document.getElementById('integerSelect').disabled = true;
+            document.getElementById('integerSelect').checked = false;
+            document.getElementById('integerSelect').hidden = true;
+            document.getElementById('intSelectionLabel').hidden = true;
+          }
+        }
+      }
+
+    </script>
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+</body>
