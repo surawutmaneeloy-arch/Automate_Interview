@@ -36,6 +36,7 @@ td.PASS, td.FAIL, td.ERROR { background: #f5f7fa; }
 .defects img { max-width: 100%; max-height: 300px; border: 1px solid #bbb; }
 .defects td { font-size: 10px; }
 .small { color: #666; font-size: 9px; }
+.matrix th, .matrix td { padding: 2px 4px; font-size: 9px; }
 """
 
 
@@ -86,6 +87,42 @@ def render_test_report(results, title, label, html_dir, suite_dir):
     return _page(heading, "".join(parts))
 
 
+# ------------------------------------------------------------ result summary
+def render_summary_report(results_by_build, title):
+    """Summary of all builds: pass/fail count per build and a test case x build matrix."""
+    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    builds = list(results_by_build)
+    parts = [f"<h1>Test Result Summary: {_e(title)}</h1><div class='meta'>Generated {now}</div>",
+             "<table class='summary'><tr><th>Build</th><th>Total</th><th>Passed</th><th>Failed</th><th>Pass rate</th>"
+             "<th>Result</th></tr>"]
+    for b in builds:
+        rows = results_by_build[b]
+        passed = sum(1 for r in rows if r["status"] == "PASS")
+        total = len(rows)
+        result = "PASS" if passed == total else "FAIL"
+        parts.append(f"<tr><td>{_e(exporter.build_label(b))}</td><td>{total}</td><td class='PASS'>{passed}</td>"
+                     f"<td class='FAIL'>{total - passed}</td><td>{passed / total * 100:.1f}%</td>"
+                     f"<td class='{result}'><b>{result}</b></td></tr>")
+    parts.append("</table><h2>Test case x build</h2><table class='matrix'><tr><th>TC</th><th>Type</th><th>Operation</th>"
+                 "<th>First</th><th>Second</th><th>Int.</th><th>Severity</th>"
+                 + "".join(f"<th>{_e(exporter.build_label(b))}</th>" for b in builds) + "</tr>")
+    cases = {}
+    for b in builds:
+        for r in results_by_build[b]:
+            cases.setdefault(r["tc_id"], r)
+    for tc_id in sorted(cases, key=exporter.tc_num):
+        c = cases[tc_id]
+        cells = ""
+        for b in builds:
+            status = next((r["status"] for r in results_by_build[b] if r["tc_id"] == tc_id), "-")
+            cells += f"<td class='{status}' style='text-align:center'><b>{status}</b></td>"
+        parts.append(f"<tr><td>{_e(tc_id)}</td><td>{_e(c['type'])}</td><td>{_e(c['operation'])}</td>"
+                     f"<td>{_e(c['first'])}</td><td>{_e(c['second'])}</td><td>{_e(c['integers'])}</td>"
+                     f"<td>{_e(c['severity'])}</td>{cells}</tr>")
+    parts.append("</table>")
+    return _page(f"Test Result Summary - {title}", "".join(parts))
+
+
 # ------------------------------------------------------------ defect report
 def grouped_defect_rows(defects):
     """Calculator: one row per (build, bug symptom) - symptoms come from bug_triage.json."""
@@ -95,7 +132,7 @@ def grouped_defect_rows(defects):
         evidence = next((m["evidence"] for m in members if m.get("evidence")), "")
         rows.append({
             "id": f"BUG-{index:02d}", "build": exporter.build_label(build),
-            "severity": min((m["severity"] for m in members), key=exporter._sev_rank),
+            "severity": min((m["severity"] for m in members), key=exporter.sev_rank),
             "description": f"{symptom}\n(example input: {first['input']})",
             "refs": ", ".join(m["tc_id"] for m in members) + f"\n({len(members)} failed test cases)",
             "expected": first["expected"], "actual": first["actual"], "picture": evidence,
@@ -128,3 +165,4 @@ def render_defect_report(rows, title, defect_count, suite_dir):
             f"<td>{_e(r['actual'])}</td><td class='pic'>{picture}</td></tr>")
     parts.append("</table>")
     return _page(f"Defect Report - {title}", "".join(parts))
+

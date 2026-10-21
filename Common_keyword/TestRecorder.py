@@ -5,6 +5,7 @@ Layout under ${OUTPUT DIR}:  <suite>/<group>/results.jsonl | defects.jsonl | evi
 """
 import re
 import shutil
+from collections import OrderedDict
 from datetime import datetime
 from pathlib import Path
 
@@ -117,7 +118,7 @@ class TestRecorder:
     # ------------------------------------------------------------ export
     @keyword("Export Suite Reports")
     def export_suite_reports(self, suite, title):
-        """Write HTML (+ md/xlsx for the calculator) and return [html, html_uri, pdf, landscape] rows to print as PDF."""
+        """Write the report HTML and return [html, html_uri, pdf, landscape] rows to print as PDF."""
         suite_dir = self._output_dir() / suite
         jobs = []
         started = sorted((g, d) for (s, g), d in self.started.items() if s == suite)
@@ -131,15 +132,18 @@ class TestRecorder:
             html = directory / "Test_Report.html"
             html.write_text(PdfReport.render_test_report(results, title, label, directory, suite_dir), encoding="utf-8")
             jobs.append([str(html), html.as_uri(), str(directory / "Test_Report.pdf"), False])
-            if suite in CONSOLIDATED_SUITES:
-                exporter.export_build_reports(directory)
 
         if suite in CONSOLIDATED_SUITES:
-            exporter.export_consolidated(suite_dir)
+            by_build = OrderedDict()
             defects = []
             for d in sorted(suite_dir.glob("Build_*"), key=lambda p: int(p.name.split("_")[1])):
+                by_build[d.name.split("_")[1]] = exporter.read_jsonl(d / "results.jsonl")
                 defects += exporter.read_jsonl(d / "defects.jsonl")
             rows = PdfReport.grouped_defect_rows(defects)
+            if by_build:
+                html = suite_dir / "Test_Result_Summary.html"
+                html.write_text(PdfReport.render_summary_report(by_build, title), encoding="utf-8")
+                jobs.append([str(html), html.as_uri(), str(suite_dir / "Test_Result_Summary.pdf"), True])
         else:
             defects = exporter.read_jsonl(suite_dir / "defects.jsonl")
             rows = PdfReport.single_defect_rows(defects)
