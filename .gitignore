@@ -8,3 +8,4 @@ browser/
 Test_Result/**/evidence/
 Test_Result/**/*.jsonl
 _*.png
+Test_Result/playwright-log*.txt
