@@ -36,7 +36,7 @@ Test_case_robot/       4. test case robot: per project folder = the runnable .ro
 | `Common_keyword/report.resource` | `Export Pdf Reports`: prints the generated HTML to PDF with headless Chromium |
 | `Common_keyword/TestRecorder.py` | Robot library: records steps/results/defects as JSONL, evidence paths, builds report jobs |
 | `Common_keyword/PdfReport.py` | Builds the HTML of the test report (header + steps table) and defect report |
-| `Common_keyword/ReportExporter.py` | md/xlsx exports, bug grouping (`bug_triage.json`) for the calculator |
+| `Common_keyword/ReportExporter.py` | Shared report helpers (JSONL, md/xlsx table of the test case table) and bug grouping (`bug_triage.json`) for the calculator |
 | `Common_keyword/SchemaValidator.py`, `api_schemas/*.json` | JSON schema check for API responses |
 | `Common_keyword/bug_triage.json` | Human-written bug symptoms per build (maps failed TCs to one bug) |
 | `Process_keyword/*.resource` | Step-level keywords (`calculator_process`, `yahoo_create_account_page` = Page Object, `api_process`) + `Capture ... Evidence` keywords |
@@ -106,7 +106,7 @@ python -m robot.rebot --suite "Yahoo" -o NONE -l yahoo_log.html -r yahoo_report.
 
 Output (`Test_Result/`, regenerated every run, safe to delete):
 `report.html`/`log.html`/`output.xml` (Robot), `Calculator/Build_N/Test_Report.pdf`, `Calculator/Defect_Report.pdf`,
-`Calculator/Test_Result_Summary.*`, `Yahoo_UI/` and `FakeRest_API/` with `Test_Report.pdf` + `Defect_Report.pdf`,
+`Calculator/Test_Result_Summary.pdf` (all builds), `Yahoo_UI/` and `FakeRest_API/` with `Test_Report.pdf` + `Defect_Report.pdf`,
 `evidence/` pictures and `results.jsonl`/`defects.jsonl` (raw records).
 
 ## 6. How to extend (checklist)

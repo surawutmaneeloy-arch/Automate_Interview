@@ -18,7 +18,7 @@ The goals of the work are in `Todos.md`. **AI assistants: read `AGENTS.md` first
 | Ex. 2 - test case table (part 1) | `Test_case/test_cases.md` and `Test_case/test_cases.xlsx` (64 cases, exported from the test data) |
 | Ex. 2 - source code | this repository |
 | Ex. 2 - run report | `Test_Result/Calculator/Build_<0-9>/Test_Report.pdf` (one per build) |
-| Ex. 2 - bug summary table (part 3) | section 8 below and `Test_Result/Calculator/Defect_Report.pdf` (+ `.md` / `.xlsx`) |
+| Ex. 2 - bug summary table (part 3) | section 8 below and `Test_Result/Calculator/Defect_Report.pdf` |
 | Ex. 3-4 - Git repository with commits and branches | this repository (work on a feature branch, merged into `main`) |
 | Ex. 3-4 - README: install, run, tools, AI usage | this file (sections 2, 3, 10) |
 | Ex. 3-4 - HTML test report (Ex. 3 and Ex. 4) | `Test_Result/Robot/Yahoo_API/report.html` + `log.html` (Robot Framework HTML report of both tasks, see section 3) |
@@ -104,7 +104,7 @@ Test_case_robot/       4. test case robot: the .robot files that are run + test 
 | `Common_keyword/report.resource` | `Export Pdf Reports`: prints the generated HTML to PDF with headless Chromium |
 | `Common_keyword/TestRecorder.py` | Robot library: records steps, results and defects (JSONL), evidence paths, builds the report jobs |
 | `Common_keyword/PdfReport.py` | Builds the HTML of the test report and the defect report |
-| `Common_keyword/ReportExporter.py`, `bug_triage.json` | md/xlsx exports and the bug grouping of the calculator (failed test cases -> one bug symptom per build) |
+| `Common_keyword/ReportExporter.py`, `bug_triage.json` | Shared report helpers (JSONL records, table export of the test case table) and the bug grouping of the calculator (failed test cases -> one bug symptom per build) |
 | `Common_keyword/SchemaValidator.py`, `api_schemas/*.json` | JSON schema validation of API responses |
 | `Process_keyword/calculator_process.resource`, `yahoo_create_account_page.resource` (Page Object), `api_process.resource` | Step-level keywords + `Capture ... Evidence` keywords |
 | `Test_case_robot/Calculator/` | `calculator_data_driven.robot` (the 64 test cases), `calculator_test_data.py` (test data), `calculator_test_case.resource` (test case keywords) |
@@ -142,7 +142,7 @@ Yahoo registration is never completed (every negative row contains something Yah
 |---|---|
 | `Calculator/Build_<n>/Test_Report.pdf` | **Test report.** Per test case: header (test case name, test data, pre-condition, total status) and a steps table (test status, test step, picture, expected; actual for failed steps) |
 | `Calculator/Defect_Report.pdf` | **Defect report** (Builds 1-9, one row per bug symptom): description, ref. test cases, expected, actual, picture of the actual result |
-| `Calculator/Test_Result_Summary.md/.xlsx`, `Build_<n>/Test_Result.md/.xlsx`, `Defect_Report.md/.xlsx` | Tables of results and defects |
+| `Calculator/Test_Result_Summary.pdf` | **Result summary** of all builds: pass/fail count per build and a test case x build matrix |
 | `Yahoo_UI/`, `FakeRest_API/` | `Test_Report.pdf` and `Defect_Report.pdf` of Ex. 3 and Ex. 4 (API steps show the request/response text instead of a picture) |
 | `Robot/.../report.html`, `log.html`, `output.xml` | Standard Robot Framework HTML report/log |
 | `*/evidence/*.jpeg`, `results.jsonl`, `defects.jsonl` | Pictures and raw records the PDFs are built from |
@@ -176,7 +176,7 @@ Yahoo registration is never completed (every negative row contains something Yah
 | Build 8 | First and Second number are swapped - order-dependent operations give wrong results and the validation message names the wrong field | Subtract: First='5', Second='3', Integers only=No | answer='2' \| error='' | answer='-2' \| error='' | Critical | 28 |
 | Build 9 | Second number field and Calculate button vanish - no calculation can be performed | Add: First='2', Second='3', Integers only=No | answer='5' \| error='' | Step failed: TimeoutError: locator.fill: Timeout 5000ms exceeded. | Critical | 60 |
 
-Build 0 (Prototype): 64 / 64 passed. Failed test cases per build: 8, 21, 4, 7, 1, 3, 41, 28, 60 (Builds 1-9, 173 in total). Full list per test case: `Test_Result/Calculator/Test_Result_Summary.md`; with pictures: `Defect_Report.pdf`.
+Build 0 (Prototype): 64 / 64 passed. Failed test cases per build: 8, 21, 4, 7, 1, 3, 41, 28, 60 (Builds 1-9, 173 in total). Full list per test case: `Test_Result/Calculator/Test_Result_Summary.pdf`; with pictures: `Defect_Report.pdf`.
 
 ### Ex. 3 - Yahoo create account (public production site, results can change)
 
