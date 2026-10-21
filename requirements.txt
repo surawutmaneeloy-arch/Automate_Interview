@@ -1,0 +1,4 @@
+robotframework>=7.0
+robotframework-browser>=19.0
+robotframework-robotcode[runner]>=2.0
+xlsxwriter>=3.0

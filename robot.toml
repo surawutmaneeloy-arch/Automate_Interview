@@ -1,0 +1,10 @@
+paths = ["Test_script"]
+python-path = ["Common_keyword"]
+output-dir = "Test_Result"
+
+[variables]
+BUILD = "0"
+HEADLESS = "True"
+
+[pre-run-modifiers]
+DataDrivenModifier = []
