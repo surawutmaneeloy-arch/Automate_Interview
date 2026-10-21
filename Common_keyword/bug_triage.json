@@ -1,0 +1,32 @@
+{
+  "1": [
+    {"symptom": "No numeric validation - text input is accepted and the answer shows NaN instead of the 'Number x is not a number' error", "tcs": "*"}
+  ],
+  "2": [
+    {"symptom": "Add and Concatenate are swapped - Add joins the text (2 + 3 = 23) and ignores Integers only", "tcs": ["TC01", "TC02", "TC03", "TC04", "TC05", "TC06", "TC07", "TC32", "TC33", "TC34", "TC43", "TC44", "TC45", "TC49", "TC52", "TC58"]},
+    {"symptom": "Add and Concatenate are swapped - Concatenate adds the numbers / returns NaN for text", "tcs": ["TC27", "TC28", "TC29", "TC30", "TC31"]}
+  ],
+  "3": [
+    {"symptom": "Concatenate validates the inputs as numbers - text cannot be concatenated", "tcs": ["TC27", "TC30", "TC31"]},
+    {"symptom": "Integers only checkbox stays enabled when Concatenate is selected", "tcs": ["TC61"]}
+  ],
+  "4": [
+    {"symptom": "Answer is always rounded to an integer even when Integers only is not ticked", "tcs": ["TC06", "TC19", "TC20", "TC21", "TC23"]},
+    {"symptom": "Integers only checkbox is locked (disabled) for Add / Divide", "tcs": ["TC62", "TC63"]}
+  ],
+  "5": [
+    {"symptom": "Clear button is disabled on a fresh page", "tcs": "*"}
+  ],
+  "6": [
+    {"symptom": "Divide by zero is not checked - Infinity / NaN is shown instead of the error message", "tcs": "*"}
+  ],
+  "7": [
+    {"symptom": "First operand uses the previous answer instead of First number field (first calculation uses empty/0)", "tcs": "*"}
+  ],
+  "8": [
+    {"symptom": "First and Second number are swapped - order-dependent operations give wrong results and the validation message names the wrong field", "tcs": "*"}
+  ],
+  "9": [
+    {"symptom": "Second number field and Calculate button vanish - no calculation can be performed", "tcs": "*"}
+  ]
+}
