@@ -1,0 +1,18 @@
+paths = ["Test_case_robot"]
+python-path = ["Common_keyword"]
+output-dir = "Test_Result"
+
+[variables]
+HEADLESS = "True"
+# Basic Calculator build under test: 0 = Prototype, 1-9 = Build 1-9 (override with --variable BUILD:3)
+BUILD = "0"
+API_BASE_URL = "https://fakerestapi.azurewebsites.net"
+
+[profiles.calculator]
+paths = ["Test_case_robot/Calculator"]
+
+[profiles.yahoo]
+paths = ["Test_case_robot/Yahoo"]
+
+[profiles.api]
+paths = ["Test_case_robot/API"]

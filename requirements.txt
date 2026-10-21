@@ -1,0 +1,6 @@
+robotframework>=7.0
+robotframework-browser>=19.0
+robotframework-requests>=0.9.7
+robotcode[runner]>=2.0
+jsonschema>=4.0
+xlsxwriter>=3.0
