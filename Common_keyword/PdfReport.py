@@ -91,18 +91,26 @@ def render_test_report(results, title, label, html_dir, suite_dir):
 def render_summary_report(results_by_build, title):
     """Summary of all builds: pass/fail count per build and a test case x build matrix."""
     now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    builds = list(results_by_build)
+    builds = [b for b, rows in results_by_build.items() if rows]
+    expected_total = max((len(rows) for rows in results_by_build.values()), default=0)
     parts = [f"<h1>Test Result Summary: {_e(title)}</h1><div class='meta'>Generated {now}</div>",
-             "<table class='summary'><tr><th>Build</th><th>Total</th><th>Passed</th><th>Failed</th><th>Pass rate</th>"
-             "<th>Result</th></tr>"]
+             "<table class='summary'><tr><th>Build</th><th>Executed</th><th>Passed</th><th>Failed</th><th>Error</th>"
+             "<th>Pass rate</th><th>Last run</th><th>Result</th></tr>"]
     for b in builds:
         rows = results_by_build[b]
-        passed = sum(1 for r in rows if r["status"] == "PASS")
         total = len(rows)
-        result = "PASS" if passed == total else "FAIL"
-        parts.append(f"<tr><td>{_e(exporter.build_label(b))}</td><td>{total}</td><td class='PASS'>{passed}</td>"
-                     f"<td class='FAIL'>{total - passed}</td><td>{passed / total * 100:.1f}%</td>"
-                     f"<td class='{result}'><b>{result}</b></td></tr>")
+        passed = sum(1 for r in rows if r["status"] == "PASS")
+        failed = sum(1 for r in rows if r["status"] == "FAIL")
+        errors = total - passed - failed
+        last_run = max((r["timestamp"] for r in rows), default="")
+        result = "PASS" if passed == expected_total else "FAIL"
+        if errors or total < expected_total:  # an interrupted run or an environment problem: do not trust the counts
+            result = "INCOMPLETE"
+        css = "ERROR" if result == "INCOMPLETE" else result
+        parts.append(f"<tr><td>{_e(exporter.build_label(b))}</td><td>{total} / {expected_total}</td>"
+                     f"<td class='PASS'>{passed}</td><td class='FAIL'>{failed}</td><td class='ERROR'>{errors}</td>"
+                     f"<td>{passed / total * 100:.1f}%</td><td>{_e(last_run)}</td>"
+                     f"<td class='{css}'><b>{result}</b></td></tr>")
     parts.append("</table><h2>Test case x build</h2><table class='matrix'><tr><th>TC</th><th>Type</th><th>Operation</th>"
                  "<th>First</th><th>Second</th><th>Int.</th><th>Severity</th>"
                  + "".join(f"<th>{_e(exporter.build_label(b))}</th>" for b in builds) + "</tr>")

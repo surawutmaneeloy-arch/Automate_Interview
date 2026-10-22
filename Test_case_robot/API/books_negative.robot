@@ -4,6 +4,8 @@ Documentation       FakeRESTApi - negative tests, data-driven: one row of the ta
 Resource            api_test_case.resource
 Variables           api_test_data.py
 
+Suite Setup         Start Api Suite
+Suite Teardown      Finish Api Suite
 Test Template       Request Is Rejected
 Test Teardown       Finish Api Test
 Test Tags           api    negative    data-driven

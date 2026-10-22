@@ -4,6 +4,8 @@ Documentation       Yahoo create account - positive tests. Valid data is only ty
 Resource            yahoo_test_case.resource
 Variables           yahoo_test_data.py
 
+Suite Setup         Start Yahoo Suite
+Suite Teardown      Finish Yahoo Suite
 Test Teardown       Finish Yahoo Test
 Test Tags           yahoo    ui    positive
 

@@ -4,6 +4,3 @@ Documentation       API tests of FakeRESTApi (Swagger: https://fakerestapi.azure
 ...                 and are documented in README.md.
 Resource            api_test_case.resource
 Variables           api_test_data.py
-
-Suite Setup         Start Api Suite
-Suite Teardown      Finish Api Suite

@@ -4,6 +4,8 @@ Documentation       FakeRESTApi - positive tests (status code, response body and
 Resource            api_test_case.resource
 Variables           api_test_data.py
 
+Suite Setup         Start Api Suite
+Suite Teardown      Finish Api Suite
 Test Teardown       Finish Api Test
 Test Tags           api    positive
 

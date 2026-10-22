@@ -84,6 +84,10 @@ Configuration is in `robot.toml` (`HEADLESS`, `BUILD`, `API_BASE_URL`, profiles)
 `--variable HEADLESS:False` to watch the browser or `--variable API_BASE_URL:https://other-host`.
 Failing tests are expected: they are the bugs found in Builds 1-9 and the findings on the public sites (sections 8-9).
 A calculator run takes about 3-4 minutes per build (Build 9 longer: its elements are missing, so steps time out).
+The results are repeatable: the same test cases give the same pass/fail per build every run (Prototype 64/64; Builds 1-9 fail
+8, 21, 4, 7, 1, 3, 41, 28, 60). Each build folder under `Test_Result/Calculator/` is replaced by the latest run of that build, and the
+summary reads all build folders, so **let every build run to the end** - a run that is stopped or loses the browser leaves test cases
+with status `ERROR`, and the summary then shows that build as `INCOMPLETE` (executed < 64) instead of PASS/FAIL. Re-run that build.
 
 ## 4. Project structure (same template for every project)
 
@@ -142,7 +146,7 @@ Yahoo registration is never completed (every negative row contains something Yah
 |---|---|
 | `Calculator/Build_<n>/Test_Report.pdf` | **Test report.** Per test case: header (test case name, test data, pre-condition, total status) and a steps table (test status, test step, picture, expected; actual for failed steps) |
 | `Calculator/Defect_Report.pdf` | **Defect report** (Builds 1-9, one row per bug symptom): description, ref. test cases, expected, actual, picture of the actual result |
-| `Calculator/Test_Result_Summary.pdf` | **Result summary** of all builds: pass/fail count per build and a test case x build matrix |
+| `Calculator/Test_Result_Summary.pdf` | **Result summary** of all builds: executed / passed / failed / error count and last run time per build (`INCOMPLETE` when a build was not fully executed) and a test case x build matrix |
 | `Yahoo_UI/`, `FakeRest_API/` | `Test_Report.pdf` and `Defect_Report.pdf` of Ex. 3 and Ex. 4 (API steps: the picture shows the request, status and response body) |
 | `Robot/.../report.html`, `log.html`, `output.xml` | Standard Robot Framework HTML report/log |
 | `*/evidence/*.jpeg`, `results.jsonl`, `defects.jsonl` | Pictures and raw records the PDFs are built from |

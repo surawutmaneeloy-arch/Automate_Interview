@@ -15,10 +15,10 @@ Open Create Account Page
 
 Fill Registration Form
     [Arguments]    ${first}    ${last}    ${username}    ${password}    ${month}    ${day}    ${year}
-    Type Value If Given    ${YH_FIRST_NAME}    ${first}
-    Type Value If Given    ${YH_LAST_NAME}    ${last}
-    Type Value If Given    ${YH_USERNAME}    ${username}
-    Type Value If Given    ${YH_PASSWORD}    ${password}
+    Fill Value If Given    ${YH_FIRST_NAME}    ${first}
+    Fill Value If Given    ${YH_LAST_NAME}    ${last}
+    Fill Value If Given    ${YH_USERNAME}    ${username}
+    Fill Value If Given    ${YH_PASSWORD}    ${password}
     Type Value If Given    ${YH_DOB_MONTH}    ${month}
     Type Value If Given    ${YH_DOB_DAY}    ${day}
     Type Value If Given    ${YH_DOB_YEAR}    ${year}

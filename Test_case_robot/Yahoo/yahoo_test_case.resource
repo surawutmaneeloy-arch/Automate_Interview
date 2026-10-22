@@ -71,7 +71,7 @@ Strong Password Is Accepted
     VAR    ${EXPECTED_TEXT}    strength Strong, no password error    scope=TEST
     Run Test Step    Enter the strong password '${password}'
     ...    The password field shows the value
-    ...    Type Keys Into Field    ${YH_PASSWORD}    ${password}
+    ...    Type Into Field    ${YH_PASSWORD}    ${password}
     Run Test Step    Observe the password strength indicator
     ...    Strength is "Strong" and no warning is shown at the password field
     ...    Verify Password Is Strong And Accepted

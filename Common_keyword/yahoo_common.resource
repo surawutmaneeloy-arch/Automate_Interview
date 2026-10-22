@@ -19,6 +19,11 @@ Type Value If Given
     [Arguments]    ${locator}    ${value}
     IF    $value    Type Keys Into Field    ${locator}    ${value}
 
+Fill Value If Given
+    [Documentation]    Whole value in one step: Yahoo validates asynchronously while typing and can leave a stale error.
+    [Arguments]    ${locator}    ${value}
+    IF    $value    Type Into Field    ${locator}    ${value}
+
 Click Next Button
     Click Element    ${YH_NEXT_BUTTON}
 

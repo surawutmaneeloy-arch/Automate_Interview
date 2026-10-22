@@ -43,12 +43,18 @@ Prepare Calculator Test
     Begin Test Record    ${REPORT_SUITE}    Build_${BUILD}    ${tc_id}    ${data}
     ...    Browser is open and ${BASE_URL} is loaded with ${label} selected in the Build dropdown
     ...    ${case}[severity]    ${meta}    ${label}
-    ${status}    ${message}=    Run Keyword And Ignore Error    Open Calculator For Test
+    ${status}    ${message}=    Run Keyword And Ignore Error
+    ...    Wait Until Keyword Succeeds    3x    2s    Open Calculator For Test
     IF    "${status}" == "FAIL"    Fail    Setup failed: ${message}
 
 Open Calculator For Test
     Open New Context
-    Open Calculator With Build    ${BUILD}
+    TRY
+        Open Calculator With Build    ${BUILD}
+    EXCEPT    AS    ${error}
+        Close Current Context
+        Fail    ${error}
+    END
 
 Run Calculator Test Case
     [Documentation]    Template keyword: ${case} is one record of calculator_test_data.py.

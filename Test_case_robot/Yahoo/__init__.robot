@@ -5,5 +5,3 @@ Documentation       UI tests of the Yahoo "Create account" page (https://login.y
 Resource            yahoo_test_case.resource
 Variables           yahoo_test_data.py
 
-Suite Setup         Start Yahoo Suite
-Suite Teardown      Finish Yahoo Suite
