@@ -2,9 +2,9 @@
 
 URL: https://testsheepnz.github.io/BasicCalculator.html
 
-This file is the **single source of truth** for the automation. The Robot Framework suite reads the table below
-(`Common_keyword/DataDrivenModifier.py` expands one Robot test per row). `Test_case/test_cases.xlsx` is exported from this file
-with `python Test_case/export_test_cases.py`.
+This table is exported from the test data of the automation (`Test_case_robot/Calculator/calculator_test_data.py`, one record per
+test case; `calculator_data_driven.robot` lists the same test cases and passes each record to the template keyword).
+Refresh this file and `Test_case/test_cases.xlsx` with `python Test_case/export_test_cases.py` after changing the data file.
 
 ## Conventions
 
@@ -29,7 +29,7 @@ with `python Test_case/export_test_cases.py`.
 ## Test Case Table
 
 | TC ID | Type | Category | Operation | First number | Second number | Integers only | Expected result | Expected error | Severity | Technique / Rationale |
-|-------|------|----------|-----------|--------------|---------------|---------------|-----------------|----------------|----------|-----------------------|
+|---|---|---|---|---|---|---|---|---|---|---|
 | TC01 | CALC | Normal | Add | 2 | 3 | No | 5 | (empty) | Critical | Normal value - positive integers (equivalence partitioning) |
 | TC02 | CALC | Normal | Add | -2 | -3 | No | -5 | (empty) | High | Normal value - both negative |
 | TC03 | CALC | Normal | Add | -5 | 3 | No | -2 | (empty) | High | Mixed sign - result changes sign |

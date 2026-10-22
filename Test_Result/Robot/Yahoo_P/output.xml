@@ -1,0 +1,2966 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.2 (Python 3.14.7 on win32)" generated="2026-10-21T22:11:28.102173" rpa="false" schemaversion="5">
+<suite id="s1" name="Yahoo" source="C:\Users\suraw\Downloads\Test_Interview\Test_case_robot\Yahoo">
+<suite id="s1-s1" name="Positive" source="C:\Users\suraw\Downloads\Test_Interview\Test_case_robot\Yahoo\positive.robot">
+<kw name="Start Yahoo Suite" owner="yahoo_test_case" type="SETUP">
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-10-21T22:11:28.646879" level="INFO">${CAPTURE_KEYWORD} = Capture Yahoo Evidence</msg>
+<arg>${CAPTURE_KEYWORD}</arg>
+<arg>Capture Yahoo Evidence</arg>
+<arg>children=${TRUE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-10-21T22:11:28.646251" elapsed="0.000701"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2026-10-21T22:11:28.647762" level="INFO">&amp;{VIEWPORT} = { width=1000 | height=1100 }</msg>
+<arg>&amp;{VIEWPORT}</arg>
+<arg>width=1000</arg>
+<arg>height=1100</arg>
+<arg>children=${TRUE}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2026-10-21T22:11:28.647174" elapsed="0.000655"/>
+</kw>
+<kw name="Start Browser Session" owner="common">
+<kw name="Set Browser Timeout" owner="Browser">
+<msg time="2026-10-21T22:11:28.708624" level="INFO">Starting Browser process C:\Users\suraw\Downloads\Test_Interview\.venv\Lib\site-packages\Browser\wrapper\index.js using at 127.0.0.1:57724</msg>
+<arg>${TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:28.648452" elapsed="1.112303"/>
+</kw>
+<kw name="New Browser" owner="Browser">
+<msg time="2026-10-21T22:11:29.762091" level="INFO">{"browser": "chromium", "headless": true, "args": ["--disable-blink-features=AutomationControlled"], "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\suraw\\Downloads\\Test_Interview\\Test_Result\\browser\\traces\\temp\\de4fbac7-17f8-441f-881f-ee60b0be50a2"}</msg>
+<msg time="2026-10-21T22:11:29.880589" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"args":["--disable-blink-features=AutomationControlled"],"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\suraw\\Downloads\\Test_Interview\\Test_Result\\browser\\traces\\temp\\de4fbac7-17f8-441f-881f-ee60b0be50a2"}</msg>
+<arg>chromium</arg>
+<arg>headless=${HEADLESS}</arg>
+<arg>args=["--disable-blink-features=AutomationControlled"]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-10-21T22:11:29.760982" elapsed="0.119858"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:28.648048" elapsed="1.233004"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:28.645062" elapsed="1.236114"/>
+</kw>
+<test id="s1-s1-t1" name="YH-P01 Valid data in every field shows no error" line="14">
+<kw name="Valid Data Shows No Error" owner="yahoo_test_case">
+<kw name="Registration Data" owner="yahoo_test_case">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-10-21T22:11:29.891102" level="INFO">${data} = {'First name': 'Somchai', 'Last name': 'Jaidee', 'Username': 'somchai.qa20261021', 'Password': 'Str0ng!Pass2026', 'Date of birth (MM/DD/YYYY)': '05/17/1990'}</msg>
+<var>${data}</var>
+<arg>First name=${first}</arg>
+<arg>Last name=${last}</arg>
+<arg>Username=${username}</arg>
+<arg>Password=${password}</arg>
+<arg>Date of birth (MM/DD/YYYY)=${month}/${day}/${year}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-10-21T22:11:29.889313" elapsed="0.001872"/>
+</kw>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2026-10-21T22:11:29.891361" elapsed="0.000300"/>
+</return>
+<msg time="2026-10-21T22:11:29.892005" level="INFO">${data} = {'First name': 'Somchai', 'Last name': 'Jaidee', 'Username': 'somchai.qa20261021', 'Password': 'Str0ng!Pass2026', 'Date of birth (MM/DD/YYYY)': '05/17/1990'}</msg>
+<var>${data}</var>
+<arg>${first}</arg>
+<arg>${last}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${month}</arg>
+<arg>${day}</arg>
+<arg>${year}</arg>
+<status status="PASS" start="2026-10-21T22:11:29.888055" elapsed="0.004001"/>
+</kw>
+<kw name="Prepare Yahoo Test" owner="yahoo_test_case">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-21T22:11:29.894286" level="INFO">${tc_id} = YH-P01</msg>
+<var>${tc_id}</var>
+<arg>$TEST_NAME.split()[0]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-10-21T22:11:29.893269" elapsed="0.001076"/>
+</kw>
+<kw name="Begin Test Record" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:29.896936" level="INFO">${STEP_NO} = 0</msg>
+<var>0</var>
+<status status="PASS" start="2026-10-21T22:11:29.896504" elapsed="0.000495"/>
+</variable>
+<kw name="Start Test Record" owner="TestRecorder">
+<arg>${suite}</arg>
+<arg>${group}</arg>
+<arg>${tc_id}</arg>
+<arg>${TEST NAME}</arg>
+<arg>${data}</arg>
+<arg>${precondition}</arg>
+<arg>${severity}</arg>
+<arg>${meta}</arg>
+<arg>${group_label}</arg>
+<doc>Begin the record of the running test. ``test_data`` is an ordered dict (label -&gt; value).</doc>
+<status status="PASS" start="2026-10-21T22:11:29.897258" elapsed="0.004263"/>
+</kw>
+<arg>${REPORT_SUITE}</arg>
+<arg>${EMPTY}</arg>
+<arg>${tc_id}</arg>
+<arg>${data}</arg>
+<arg>Browser is open at ${YAHOO_URL} and the registration form is loaded and ready</arg>
+<arg>${severity}</arg>
+<status status="PASS" start="2026-10-21T22:11:29.894648" elapsed="0.007033"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Open Yahoo Page" owner="yahoo_test_case">
+<kw name="Open New Context" owner="common">
+<kw name="New Context" owner="Browser">
+<msg time="2026-10-21T22:11:29.906619" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "locale": "en-US",
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1000,
+    "height": 1100
+  }
+}</msg>
+<msg time="2026-10-21T22:11:29.923554" level="INFO">Successfully created context. </msg>
+<msg time="2026-10-21T22:11:29.923666" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'locale': 'en-US', 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1000, 'height': 1100}}</msg>
+<arg>viewport=${VIEWPORT}</arg>
+<arg>locale=en-US</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-10-21T22:11:29.903479" elapsed="0.020284"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:29.903031" elapsed="0.020900"/>
+</kw>
+<kw name="Open Create Account Page" owner="yahoo_create_account_page">
+<kw name="Open Yahoo Create Account Page" owner="yahoo_common">
+<kw name="Open Page With Retry" owner="common">
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${NAV_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:29.926460" elapsed="0.003943"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="New Page" owner="Browser">
+<msg time="2026-10-21T22:11:31.083421" level="INFO">Successfully initialized new page object and opened url: https://login.yahoo.com/account/create</msg>
+<arg>${url}</arg>
+<arg>wait_until=domcontentloaded</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-10-21T22:11:29.931748" elapsed="1.151883"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>New Page</arg>
+<arg>${url}</arg>
+<arg>wait_until=domcontentloaded</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-10-21T22:11:29.930756" elapsed="1.153011"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:31.083961" elapsed="0.002515"/>
+</kw>
+<arg>${YAHOO_URL}</arg>
+<status status="PASS" start="2026-10-21T22:11:29.925775" elapsed="1.160826"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-21T22:11:31.122290" level="INFO">Waited for Element with selector id=reg-firstName at state visible</msg>
+<arg>${YH_FIRST_NAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-10-21T22:11:31.086766" elapsed="0.035776"/>
+</kw>
+<kw name="Wait For Function" owner="Browser">
+<msg time="2026-10-21T22:11:32.229279" level="INFO">Wait For Function completed successfully.</msg>
+<arg>${YH_HYDRATED_JS}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Polls JavaScript expression or function in browser until it returns a (JavaScript) truthy value.</doc>
+<status status="PASS" start="2026-10-21T22:11:31.122885" elapsed="1.106537"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:29.925051" elapsed="2.304485"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:29.924253" elapsed="2.305336"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:29.902546" elapsed="2.327090"/>
+</kw>
+<msg time="2026-10-21T22:11:32.229762" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:32.229806" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>Open Yahoo Page</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:29.901880" elapsed="2.327948"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>Setup failed: ${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:32.230589" elapsed="0.000249"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:32.229950" elapsed="0.000982"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:32.229912" elapsed="0.001093"/>
+</if>
+<arg>${data}</arg>
+<arg>${severity}</arg>
+<doc>Pre-condition shared by all tests: the registration page is open and ready for input.</doc>
+<status status="PASS" start="2026-10-21T22:11:29.892505" elapsed="2.338590"/>
+</kw>
+<variable name="${EXPECTED_TEXT}" scope="TEST">
+<msg time="2026-10-21T22:11:32.231504" level="INFO">${EXPECTED_TEXT} = no error message and a valid form</msg>
+<var>no error message and a valid form</var>
+<status status="PASS" start="2026-10-21T22:11:32.231183" elapsed="0.000375"/>
+</variable>
+<kw name="Form Step Text" owner="yahoo_test_case">
+<return>
+<value>Enter First name '${first}', Last name '${last}', Username '${username}', Password '${password}', date of birth ${month}/${day}/${year}</value>
+<status status="PASS" start="2026-10-21T22:11:32.232679" elapsed="0.000238"/>
+</return>
+<msg time="2026-10-21T22:11:32.233197" level="INFO">${step} = Enter First name 'Somchai', Last name 'Jaidee', Username 'somchai.qa20261021', Password 'Str0ng!Pass2026', date of birth 05/17/1990</msg>
+<var>${step}</var>
+<arg>${first}</arg>
+<arg>${last}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${month}</arg>
+<arg>${day}</arg>
+<arg>${year}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.231916" elapsed="0.001312"/>
+</kw>
+<kw name="Run Test Step" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:32.234707" level="INFO">${STEP_NO} = 1</msg>
+<var>${{ ${STEP_NO} + 1 }}</var>
+<status status="PASS" start="2026-10-21T22:11:32.234026" elapsed="0.000722"/>
+</variable>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:32.235756" level="INFO">${STEP_ACTUAL} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:32.234818" elapsed="0.000994"/>
+</variable>
+<variable name="${STEP_EVIDENCE}" scope="TEST">
+<msg time="2026-10-21T22:11:32.236987" level="INFO">${STEP_EVIDENCE} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:32.235912" elapsed="0.001120"/>
+</variable>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Fill And Verify Registration Form" owner="yahoo_test_case">
+<kw name="Fill Registration Form" owner="yahoo_create_account_page">
+<kw name="Fill Value If Given" owner="yahoo_common">
+<if>
+<branch type="IF" condition="$value">
+<kw name="Type Into Field" owner="common">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-10-21T22:11:32.241326" level="INFO">Fills the text 'Somchai' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.240756" elapsed="0.236583"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.240278" elapsed="0.237211"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:32.239880" elapsed="0.237657"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:32.239848" elapsed="0.237745"/>
+</if>
+<arg>${YH_FIRST_NAME}</arg>
+<arg>${first}</arg>
+<doc>Whole value in one step: Yahoo validates asynchronously while typing and can leave a stale error.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.239303" elapsed="0.238334"/>
+</kw>
+<kw name="Fill Value If Given" owner="yahoo_common">
+<if>
+<branch type="IF" condition="$value">
+<kw name="Type Into Field" owner="common">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-10-21T22:11:32.480148" level="INFO">Fills the text 'Jaidee' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.479432" elapsed="0.023441"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.478945" elapsed="0.024078"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:32.478497" elapsed="0.024575"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:32.478469" elapsed="0.024661"/>
+</if>
+<arg>${YH_LAST_NAME}</arg>
+<arg>${last}</arg>
+<doc>Whole value in one step: Yahoo validates asynchronously while typing and can leave a stale error.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.477887" elapsed="0.025287"/>
+</kw>
+<kw name="Fill Value If Given" owner="yahoo_common">
+<if>
+<branch type="IF" condition="$value">
+<kw name="Type Into Field" owner="common">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-10-21T22:11:32.505634" level="INFO">Fills the text 'somchai.qa20261021' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.505014" elapsed="0.127302"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.504501" elapsed="0.128018"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:32.504069" elapsed="0.128563"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:32.504042" elapsed="0.128652"/>
+</if>
+<arg>${YH_USERNAME}</arg>
+<arg>${username}</arg>
+<doc>Whole value in one step: Yahoo validates asynchronously while typing and can leave a stale error.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.503451" elapsed="0.129301"/>
+</kw>
+<kw name="Fill Value If Given" owner="yahoo_common">
+<if>
+<branch type="IF" condition="$value">
+<kw name="Type Into Field" owner="common">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-10-21T22:11:32.635316" level="INFO">Fills the text 'Str0ng!Pass2026' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.634689" elapsed="0.019546"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.634147" elapsed="0.020230"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:32.633682" elapsed="0.020743"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:32.633652" elapsed="0.020823"/>
+</if>
+<arg>${YH_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Whole value in one step: Yahoo validates asynchronously while typing and can leave a stale error.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.633052" elapsed="0.021466"/>
+</kw>
+<kw name="Type Value If Given" owner="yahoo_common">
+<if>
+<branch type="IF" condition="$value">
+<kw name="Type Keys Into Field" owner="common">
+<kw name="Type Text" owner="Browser">
+<msg time="2026-10-21T22:11:32.657029" level="INFO">Types the text '05' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<arg>delay=20ms</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.656367" elapsed="0.089289"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.655856" elapsed="0.089942"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:32.655387" elapsed="0.090456"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:32.655355" elapsed="0.090535"/>
+</if>
+<arg>${YH_DOB_MONTH}</arg>
+<arg>${month}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.654765" elapsed="0.091166"/>
+</kw>
+<kw name="Type Value If Given" owner="yahoo_common">
+<if>
+<branch type="IF" condition="$value">
+<kw name="Type Keys Into Field" owner="common">
+<kw name="Type Text" owner="Browser">
+<msg time="2026-10-21T22:11:32.748166" level="INFO">Types the text '17' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<arg>delay=20ms</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.747564" elapsed="0.075993"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.747103" elapsed="0.076592"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:32.746739" elapsed="0.076998"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:32.746713" elapsed="0.077072"/>
+</if>
+<arg>${YH_DOB_DAY}</arg>
+<arg>${day}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.746157" elapsed="0.077666"/>
+</kw>
+<kw name="Type Value If Given" owner="yahoo_common">
+<if>
+<branch type="IF" condition="$value">
+<kw name="Type Keys Into Field" owner="common">
+<kw name="Type Text" owner="Browser">
+<msg time="2026-10-21T22:11:32.826752" level="INFO">Types the text '1990' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<arg>delay=20ms</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.825988" elapsed="0.136861"/>
+</kw>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.825301" elapsed="0.137663"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:32.824868" elapsed="0.138131"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:32.824835" elapsed="0.138199"/>
+</if>
+<arg>${YH_DOB_YEAR}</arg>
+<arg>${year}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.824164" elapsed="0.138907"/>
+</kw>
+<arg>${first}</arg>
+<arg>${last}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${month}</arg>
+<arg>${day}</arg>
+<arg>${year}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.238523" elapsed="0.724590"/>
+</kw>
+<kw name="Verify Filled Values" owner="yahoo_create_account_page">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-10-21T22:11:32.964198" level="INFO">${shown} = []</msg>
+<var>${shown}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.963896" elapsed="0.000326"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Read Field Value" owner="common">
+<kw name="Get Property" owner="Browser">
+<msg time="2026-10-21T22:11:32.974266" level="INFO">Property: 'Somchai'</msg>
+<msg time="2026-10-21T22:11:32.974435" level="INFO">${value} = Somchai</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.965004" elapsed="0.009454"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" start="2026-10-21T22:11:32.974543" elapsed="0.000201"/>
+</return>
+<msg time="2026-10-21T22:11:32.975007" level="INFO">${value} = Somchai</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.964728" elapsed="0.010367"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${shown}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.975279" elapsed="0.000373"/>
+</kw>
+<var name="${locator}">id=reg-firstName</var>
+<status status="PASS" start="2026-10-21T22:11:32.964556" elapsed="0.011146"/>
+</iter>
+<iter>
+<kw name="Read Field Value" owner="common">
+<kw name="Get Property" owner="Browser">
+<msg time="2026-10-21T22:11:32.983858" level="INFO">Property: 'Jaidee'</msg>
+<msg time="2026-10-21T22:11:32.983971" level="INFO">${value} = Jaidee</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.976367" elapsed="0.007628"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" start="2026-10-21T22:11:32.984070" elapsed="0.000173"/>
+</return>
+<msg time="2026-10-21T22:11:32.984385" level="INFO">${value} = Jaidee</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.976039" elapsed="0.008367"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${shown}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.984521" elapsed="0.000260"/>
+</kw>
+<var name="${locator}">id=reg-lastName</var>
+<status status="PASS" start="2026-10-21T22:11:32.975815" elapsed="0.009009"/>
+</iter>
+<iter>
+<kw name="Read Field Value" owner="common">
+<kw name="Get Property" owner="Browser">
+<msg time="2026-10-21T22:11:32.991292" level="INFO">Property: 'somchai.qa20261021'</msg>
+<msg time="2026-10-21T22:11:32.991400" level="INFO">${value} = somchai.qa20261021</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.985441" elapsed="0.005982"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" start="2026-10-21T22:11:32.991499" elapsed="0.000171"/>
+</return>
+<msg time="2026-10-21T22:11:32.991806" level="INFO">${value} = somchai.qa20261021</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.985109" elapsed="0.006718"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${shown}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.991936" elapsed="0.000278"/>
+</kw>
+<var name="${locator}">id=reg-userId</var>
+<status status="PASS" start="2026-10-21T22:11:32.984919" elapsed="0.007340"/>
+</iter>
+<iter>
+<kw name="Read Field Value" owner="common">
+<kw name="Get Property" owner="Browser">
+<msg time="2026-10-21T22:11:32.998684" level="INFO">Property: 'Str0ng!Pass2026'</msg>
+<msg time="2026-10-21T22:11:32.998791" level="INFO">${value} = Str0ng!Pass2026</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.992890" elapsed="0.005923"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" start="2026-10-21T22:11:32.998888" elapsed="0.000170"/>
+</return>
+<msg time="2026-10-21T22:11:32.999196" level="INFO">${value} = Str0ng!Pass2026</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.992554" elapsed="0.006663"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${shown}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.999325" elapsed="0.000252"/>
+</kw>
+<var name="${locator}">id=reg-password</var>
+<status status="PASS" start="2026-10-21T22:11:32.992352" elapsed="0.007269"/>
+</iter>
+<iter>
+<kw name="Read Field Value" owner="common">
+<kw name="Get Property" owner="Browser">
+<msg time="2026-10-21T22:11:33.006620" level="INFO">Property: '05'</msg>
+<msg time="2026-10-21T22:11:33.006775" level="INFO">${value} = 05</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.000227" elapsed="0.006571"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" start="2026-10-21T22:11:33.006887" elapsed="0.000150"/>
+</return>
+<msg time="2026-10-21T22:11:33.007188" level="INFO">${value} = 05</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.999905" elapsed="0.007306"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${shown}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.007334" elapsed="0.000284"/>
+</kw>
+<var name="${locator}">id=undefined-mm</var>
+<status status="PASS" start="2026-10-21T22:11:32.999712" elapsed="0.007957"/>
+</iter>
+<iter>
+<kw name="Read Field Value" owner="common">
+<kw name="Get Property" owner="Browser">
+<msg time="2026-10-21T22:11:33.015809" level="INFO">Property: '17'</msg>
+<msg time="2026-10-21T22:11:33.015949" level="INFO">${value} = 17</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.008407" elapsed="0.007569"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" start="2026-10-21T22:11:33.016067" elapsed="0.000225"/>
+</return>
+<msg time="2026-10-21T22:11:33.016454" level="INFO">${value} = 17</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:33.007979" elapsed="0.008497"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${shown}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.016614" elapsed="0.000310"/>
+</kw>
+<var name="${locator}">id=undefined-dd</var>
+<status status="PASS" start="2026-10-21T22:11:33.007768" elapsed="0.009207"/>
+</iter>
+<iter>
+<kw name="Read Field Value" owner="common">
+<kw name="Get Property" owner="Browser">
+<msg time="2026-10-21T22:11:33.024842" level="INFO">Property: '1990'</msg>
+<msg time="2026-10-21T22:11:33.024979" level="INFO">${value} = 1990</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<arg>value</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the ``property`` of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.017690" elapsed="0.007312"/>
+</kw>
+<return>
+<value>${value}</value>
+<status status="PASS" start="2026-10-21T22:11:33.025093" elapsed="0.000225"/>
+</return>
+<msg time="2026-10-21T22:11:33.025483" level="INFO">${value} = 1990</msg>
+<var>${value}</var>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:33.017318" elapsed="0.008188"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${shown}</arg>
+<arg>${value}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.025644" elapsed="0.000291"/>
+</kw>
+<var name="${locator}">id=undefined-yyyy</var>
+<status status="PASS" start="2026-10-21T22:11:33.017077" elapsed="0.008911"/>
+</iter>
+<var>${locator}</var>
+<value>${YH_FIRST_NAME}</value>
+<value>${YH_LAST_NAME}</value>
+<value>${YH_USERNAME}</value>
+<value>${YH_PASSWORD}</value>
+<value>${YH_DOB_MONTH}</value>
+<value>${YH_DOB_DAY}</value>
+<value>${YH_DOB_YEAR}</value>
+<status status="PASS" start="2026-10-21T22:11:32.964287" elapsed="0.061747"/>
+</for>
+<kw name="Create List" owner="BuiltIn">
+<msg time="2026-10-21T22:11:33.026634" level="INFO">${expected} = ['Somchai', 'Jaidee', 'somchai.qa20261021', 'Str0ng!Pass2026', '05', '17', '1990']</msg>
+<var>${expected}</var>
+<arg>${first}</arg>
+<arg>${last}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${month}</arg>
+<arg>${day}</arg>
+<arg>${year}</arg>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.026165" elapsed="0.000498"/>
+</kw>
+<kw name="Verify Text Equals" owner="common">
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:33.027404" level="INFO">${STEP_ACTUAL} = ['Somchai', 'Jaidee', 'somchai.qa20261021', 'Str0ng!Pass2026', '05', '17', '1990']</msg>
+<var>${actual}</var>
+<status status="PASS" start="2026-10-21T22:11:33.027196" elapsed="0.000237"/>
+</variable>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>${expected}</arg>
+<arg>Expected [${expected}] but was [${actual}]</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.027539" elapsed="0.000388"/>
+</kw>
+<arg>${shown}</arg>
+<arg>${expected}</arg>
+<doc>Keeps the observed value in  so the report shows it next to the expected result.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.026856" elapsed="0.001135"/>
+</kw>
+<arg>${first}</arg>
+<arg>${last}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${month}</arg>
+<arg>${day}</arg>
+<arg>${year}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.963321" elapsed="0.064718"/>
+</kw>
+<arg>@{args}</arg>
+<status status="PASS" start="2026-10-21T22:11:32.237967" elapsed="0.790125"/>
+</kw>
+<msg time="2026-10-21T22:11:33.028170" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:33.028204" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>${keyword}</arg>
+<arg>@{args}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.237361" elapsed="0.790861"/>
+</kw>
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="Capture Yahoo Evidence" owner="yahoo_create_account_page">
+<kw name="Evidence Path" owner="TestRecorder">
+<msg time="2026-10-21T22:11:33.029456" level="INFO">${base} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P01_step1</msg>
+<var>${base}</var>
+<arg>${step_no}</arg>
+<doc>Absolute file name (without extension) for the picture of a step.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.029155" elapsed="0.000329"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2026-10-21T22:11:33.033961" level="INFO">JavaScript executed successfully.</msg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes the given JavaScript in the browser page.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.029962" elapsed="0.004108"/>
+</kw>
+<msg time="2026-10-21T22:11:33.034187" level="INFO">${region_status} = PASS</msg>
+<msg time="2026-10-21T22:11:33.034228" level="INFO">${region} = {'x': 331, 'y': 141.59375, 'width': 338, 'height': 716.53125}</msg>
+<var>${region_status}</var>
+<var>${region}</var>
+<arg>Evaluate JavaScript</arg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.029621" elapsed="0.004626"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-10-21T22:11:33.034812" level="INFO">${crop} = {'x': 331, 'y': 141.59375, 'width': 338, 'height': 716.53125}</msg>
+<var>${crop}</var>
+<arg>"${region_status}" == "PASS"</arg>
+<arg>${region}</arg>
+<arg>${NONE}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.034367" elapsed="0.000471"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-21T22:11:33.082845" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Yahoo_UI/evidence/YH-P01_step1.jpeg" target="_blank"&gt;&lt;img src="Yahoo_UI/evidence/YH-P01_step1.jpeg" style="max-width:800px;max-height:800px;"/&gt;&lt;/a&gt;</msg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.035293" elapsed="0.047723"/>
+</kw>
+<msg time="2026-10-21T22:11:33.083178" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:33.083219" level="INFO">${path} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P01_step1.jpeg</msg>
+<var>${status}</var>
+<var>${path}</var>
+<arg>Take Screenshot</arg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.034954" elapsed="0.048287"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<return>
+<value>${EMPTY}</value>
+<status status="NOT RUN" start="2026-10-21T22:11:33.083626" elapsed="0.000098"/>
+</return>
+<status status="NOT RUN" start="2026-10-21T22:11:33.083356" elapsed="0.000425"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:33.083327" elapsed="0.000493"/>
+</if>
+<return>
+<value>${path}</value>
+<status status="PASS" start="2026-10-21T22:11:33.083855" elapsed="0.000099"/>
+</return>
+<arg>${STEP_NO}</arg>
+<doc>Picture of the registration card; falls back to the whole viewport on other pages (Terms/Privacy).</doc>
+<status status="PASS" start="2026-10-21T22:11:33.028817" elapsed="0.055357"/>
+</kw>
+<msg time="2026-10-21T22:11:33.084299" level="INFO">${picture} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P01_step1.jpeg</msg>
+<var>${picture}</var>
+<arg>${CAPTURE_KEYWORD}</arg>
+<arg>${STEP_NO}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.028332" elapsed="0.055998"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot; and not $STEP_ACTUAL">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${first_line}</var>
+<arg>$message.strip().splitlines()[0] if $message.strip() else 'no message'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:33.084832" elapsed="0.000114"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<var>Step failed: ${first_line}</var>
+<status status="NOT RUN" start="2026-10-21T22:11:33.085018" elapsed="0.000097"/>
+</variable>
+<status status="NOT RUN" start="2026-10-21T22:11:33.084425" elapsed="0.000740"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:33.084404" elapsed="0.000795"/>
+</if>
+<kw name="Add Step Record" owner="TestRecorder">
+<arg>${description}</arg>
+<arg>${expected}</arg>
+<arg>${status}</arg>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${picture}</arg>
+<arg>${STEP_EVIDENCE}</arg>
+<status status="PASS" start="2026-10-21T22:11:33.085300" elapsed="0.000773"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:33.086456" elapsed="0.000087"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:33.086179" elapsed="0.000412"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:33.086161" elapsed="0.000467"/>
+</if>
+<arg>${step}</arg>
+<arg>All entered values are displayed in the form</arg>
+<arg>Fill And Verify Registration Form</arg>
+<arg>${first}</arg>
+<arg>${last}</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<arg>${month}</arg>
+<arg>${day}</arg>
+<arg>${year}</arg>
+<doc>Runs a step keyword, takes the evidence at the expected result (pass or fail), records the step
+and fails the test when the step failed.</doc>
+<status status="PASS" start="2026-10-21T22:11:32.233515" elapsed="0.853160"/>
+</kw>
+<kw name="Run Test Step" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:33.087908" level="INFO">${STEP_NO} = 2</msg>
+<var>${{ ${STEP_NO} + 1 }}</var>
+<status status="PASS" start="2026-10-21T22:11:33.087285" elapsed="0.000657"/>
+</variable>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:33.088938" level="INFO">${STEP_ACTUAL} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:33.088002" elapsed="0.000978"/>
+</variable>
+<variable name="${STEP_EVIDENCE}" scope="TEST">
+<msg time="2026-10-21T22:11:33.090018" level="INFO">${STEP_EVIDENCE} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:33.089047" elapsed="0.001038"/>
+</variable>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Verify No Field Error Is Shown" owner="yahoo_create_account_page">
+<kw name="Count Visible Error Messages" owner="yahoo_common">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2026-10-21T22:11:33.095705" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2026-10-21T22:11:33.095884" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${NONE}</arg>
+<arg>${YH_COUNT_ERRORS_JS}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes the given JavaScript in the browser page.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.091773" elapsed="0.004143"/>
+</kw>
+<return>
+<value>${count}</value>
+<status status="PASS" start="2026-10-21T22:11:33.096003" elapsed="0.000191"/>
+</return>
+<msg time="2026-10-21T22:11:33.096347" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<status status="PASS" start="2026-10-21T22:11:33.091371" elapsed="0.005001"/>
+</kw>
+<kw name="Read Form Validity" owner="yahoo_common">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2026-10-21T22:11:33.100340" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2026-10-21T22:11:33.100488" level="INFO">${valid} = True</msg>
+<var>${valid}</var>
+<arg>${NONE}</arg>
+<arg>() =&gt; document.getElementById('challenge-form').checkValidity()</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes the given JavaScript in the browser page.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.096920" elapsed="0.003600"/>
+</kw>
+<return>
+<value>${valid}</value>
+<status status="PASS" start="2026-10-21T22:11:33.100623" elapsed="0.000174"/>
+</return>
+<msg time="2026-10-21T22:11:33.100951" level="INFO">${valid} = True</msg>
+<var>${valid}</var>
+<status status="PASS" start="2026-10-21T22:11:33.096533" elapsed="0.004443"/>
+</kw>
+<kw name="List Visible Error Messages" owner="yahoo_common">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2026-10-21T22:11:33.104313" level="INFO">JavaScript executed successfully.</msg>
+<msg time="2026-10-21T22:11:33.104442" level="INFO">${listed} = </msg>
+<var>${listed}</var>
+<arg>${NONE}</arg>
+<arg>${YH_LIST_ERRORS_JS}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes the given JavaScript in the browser page.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.101536" elapsed="0.002932"/>
+</kw>
+<return>
+<value>${listed}</value>
+<status status="PASS" start="2026-10-21T22:11:33.104547" elapsed="0.000173"/>
+</return>
+<msg time="2026-10-21T22:11:33.104879" level="INFO">${listed} = </msg>
+<var>${listed}</var>
+<status status="PASS" start="2026-10-21T22:11:33.101138" elapsed="0.003767"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:33.105529" level="INFO">${STEP_ACTUAL} = error messages shown: 0 (), form valid: True</msg>
+<var>error messages shown: ${count} (${listed}), form valid: ${valid}</var>
+<status status="PASS" start="2026-10-21T22:11:33.104963" elapsed="0.000678"/>
+</variable>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-10-21T22:11:33.106758" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${count}</arg>
+<arg>0</arg>
+<arg>${count} error message(s) are displayed</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.106015" elapsed="0.000832"/>
+</kw>
+<kw name="Should Be True" owner="BuiltIn">
+<arg>${valid}</arg>
+<arg>The form is not valid</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.106999" elapsed="0.000609"/>
+</kw>
+<arg>@{args}</arg>
+<status status="PASS" start="2026-10-21T22:11:33.090899" elapsed="0.016801"/>
+</kw>
+<msg time="2026-10-21T22:11:33.107781" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:33.107816" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>${keyword}</arg>
+<arg>@{args}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.090280" elapsed="0.017553"/>
+</kw>
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="Capture Yahoo Evidence" owner="yahoo_create_account_page">
+<kw name="Evidence Path" owner="TestRecorder">
+<msg time="2026-10-21T22:11:33.109102" level="INFO">${base} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P01_step2</msg>
+<var>${base}</var>
+<arg>${step_no}</arg>
+<doc>Absolute file name (without extension) for the picture of a step.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.108869" elapsed="0.000259"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2026-10-21T22:11:33.113432" level="INFO">JavaScript executed successfully.</msg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes the given JavaScript in the browser page.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.109590" elapsed="0.003961"/>
+</kw>
+<msg time="2026-10-21T22:11:33.113673" level="INFO">${region_status} = PASS</msg>
+<msg time="2026-10-21T22:11:33.113712" level="INFO">${region} = {'x': 331, 'y': 141.59375, 'width': 338, 'height': 744.53125}</msg>
+<var>${region_status}</var>
+<var>${region}</var>
+<arg>Evaluate JavaScript</arg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.109254" elapsed="0.004476"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-10-21T22:11:33.114306" level="INFO">${crop} = {'x': 331, 'y': 141.59375, 'width': 338, 'height': 744.53125}</msg>
+<var>${crop}</var>
+<arg>"${region_status}" == "PASS"</arg>
+<arg>${region}</arg>
+<arg>${NONE}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.113854" elapsed="0.000478"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-21T22:11:33.148721" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Yahoo_UI/evidence/YH-P01_step2.jpeg" target="_blank"&gt;&lt;img src="Yahoo_UI/evidence/YH-P01_step2.jpeg" style="max-width:800px;max-height:800px;"/&gt;&lt;/a&gt;</msg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.114789" elapsed="0.034079"/>
+</kw>
+<msg time="2026-10-21T22:11:33.149009" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:33.149043" level="INFO">${path} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P01_step2.jpeg</msg>
+<var>${status}</var>
+<var>${path}</var>
+<arg>Take Screenshot</arg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.114448" elapsed="0.034614"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<return>
+<value>${EMPTY}</value>
+<status status="NOT RUN" start="2026-10-21T22:11:33.149422" elapsed="0.000096"/>
+</return>
+<status status="NOT RUN" start="2026-10-21T22:11:33.149169" elapsed="0.000403"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:33.149141" elapsed="0.000464"/>
+</if>
+<return>
+<value>${path}</value>
+<status status="PASS" start="2026-10-21T22:11:33.149635" elapsed="0.000091"/>
+</return>
+<arg>${STEP_NO}</arg>
+<doc>Picture of the registration card; falls back to the whole viewport on other pages (Terms/Privacy).</doc>
+<status status="PASS" start="2026-10-21T22:11:33.108505" elapsed="0.041341"/>
+</kw>
+<msg time="2026-10-21T22:11:33.149931" level="INFO">${picture} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P01_step2.jpeg</msg>
+<var>${picture}</var>
+<arg>${CAPTURE_KEYWORD}</arg>
+<arg>${STEP_NO}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.107955" elapsed="0.041997"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot; and not $STEP_ACTUAL">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${first_line}</var>
+<arg>$message.strip().splitlines()[0] if $message.strip() else 'no message'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:33.150381" elapsed="0.000091"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<var>Step failed: ${first_line}</var>
+<status status="NOT RUN" start="2026-10-21T22:11:33.150534" elapsed="0.000083"/>
+</variable>
+<status status="NOT RUN" start="2026-10-21T22:11:33.150039" elapsed="0.000617"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:33.150009" elapsed="0.000674"/>
+</if>
+<kw name="Add Step Record" owner="TestRecorder">
+<arg>${description}</arg>
+<arg>${expected}</arg>
+<arg>${status}</arg>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${picture}</arg>
+<arg>${STEP_EVIDENCE}</arg>
+<status status="PASS" start="2026-10-21T22:11:33.150770" elapsed="0.000649"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:33.151758" elapsed="0.000098"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:33.151519" elapsed="0.000382"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:33.151502" elapsed="0.000431"/>
+</if>
+<arg>Move the focus out of the last field (the form is not submitted)</arg>
+<arg>No error message is displayed and the form is valid</arg>
+<arg>Verify No Field Error Is Shown</arg>
+<doc>Runs a step keyword, takes the evidence at the expected result (pass or fail), records the step
+and fails the test when the step failed.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.086935" elapsed="0.065043"/>
+</kw>
+<arg>${VALID_FIRST}</arg>
+<arg>${VALID_LAST}</arg>
+<arg>${VALID_USERNAME}</arg>
+<arg>${VALID_PASSWORD}</arg>
+<arg>${VALID_MONTH}</arg>
+<arg>${VALID_DAY}</arg>
+<arg>${VALID_YEAR}</arg>
+<arg>Critical</arg>
+<status status="PASS" start="2026-10-21T22:11:29.886001" elapsed="3.266165"/>
+</kw>
+<kw name="Finish Yahoo Test" owner="yahoo_test_case" type="TEARDOWN">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-10-21T22:11:33.153174" level="INFO">${expected} = no error message and a valid form</msg>
+<var>${expected}</var>
+<arg>${EXPECTED_TEXT}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.152810" elapsed="0.000391"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-10-21T22:11:33.153625" level="INFO">${actual} = error messages shown: 0 (), form valid: True</msg>
+<var>${actual}</var>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.153310" elapsed="0.000341"/>
+</kw>
+<kw name="End Test Record" owner="common">
+<kw name="Finish Test Record" owner="TestRecorder">
+<arg>${TEST STATUS}</arg>
+<arg>${TEST MESSAGE}</arg>
+<arg>${expected}</arg>
+<arg>${actual}</arg>
+<doc>Store the result; for FAIL also log a defect that points at the picture of the failed step.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.154316" elapsed="0.001030"/>
+</kw>
+<arg>${expected}</arg>
+<arg>${actual}</arg>
+<status status="PASS" start="2026-10-21T22:11:33.153865" elapsed="0.001564"/>
+</kw>
+<kw name="Close Current Context" owner="common">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Context" owner="Browser">
+<msg time="2026-10-21T22:11:33.158990" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2026-10-21T22:11:33.160981" level="INFO">Returned active browser id. CURRENT</msg>
+<msg time="2026-10-21T22:11:33.162377" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2026-10-21T22:11:33.165442" level="INFO">Returned active context id: CURRENT</msg>
+<msg time="2026-10-21T22:11:33.165755" level="INFO">Switching context to context=4a416648-c8e3-4c64-92f8-a23b23f3b2b6 in CURRENT</msg>
+<msg time="2026-10-21T22:11:33.168986" level="INFO">Successfully changed active context: context=4a416648-c8e3-4c64-92f8-a23b23f3b2b6</msg>
+<msg time="2026-10-21T22:11:33.176835" level="INFO">Successfully closed Context</msg>
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.156353" elapsed="0.020802"/>
+</kw>
+<arg>Close Context</arg>
+<arg>CURRENT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.155896" elapsed="0.021448"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:33.155552" elapsed="0.021886"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:33.152417" elapsed="0.025074"/>
+</kw>
+<tag>positive</tag>
+<tag>ui</tag>
+<tag>yahoo</tag>
+<status status="PASS" start="2026-10-21T22:11:29.881305" elapsed="3.296261"/>
+</test>
+<test id="s1-s1-t2" name="YH-P02 Strong password is not flagged" line="18">
+<kw name="Strong Password Is Accepted" owner="yahoo_test_case">
+<kw name="Registration Data" owner="yahoo_test_case">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-10-21T22:11:33.185789" level="INFO">${data} = {'First name': '', 'Last name': '', 'Username': '', 'Password': 'Str0ng!Pass2026', 'Date of birth (MM/DD/YYYY)': '//'}</msg>
+<var>${data}</var>
+<arg>First name=${first}</arg>
+<arg>Last name=${last}</arg>
+<arg>Username=${username}</arg>
+<arg>Password=${password}</arg>
+<arg>Date of birth (MM/DD/YYYY)=${month}/${day}/${year}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.185154" elapsed="0.000670"/>
+</kw>
+<return>
+<value>${data}</value>
+<status status="PASS" start="2026-10-21T22:11:33.185907" elapsed="0.000141"/>
+</return>
+<msg time="2026-10-21T22:11:33.186188" level="INFO">${data} = {'First name': '', 'Last name': '', 'Username': '', 'Password': 'Str0ng!Pass2026', 'Date of birth (MM/DD/YYYY)': '//'}</msg>
+<var>${data}</var>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${password}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<arg>${EMPTY}</arg>
+<status status="PASS" start="2026-10-21T22:11:33.182178" elapsed="0.004036"/>
+</kw>
+<kw name="Prepare Yahoo Test" owner="yahoo_test_case">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-21T22:11:33.187262" level="INFO">${tc_id} = YH-P02</msg>
+<var>${tc_id}</var>
+<arg>$TEST_NAME.split()[0]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.186791" elapsed="0.000503"/>
+</kw>
+<kw name="Begin Test Record" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:33.188553" level="INFO">${STEP_NO} = 0</msg>
+<var>0</var>
+<status status="PASS" start="2026-10-21T22:11:33.188350" elapsed="0.000235"/>
+</variable>
+<kw name="Start Test Record" owner="TestRecorder">
+<arg>${suite}</arg>
+<arg>${group}</arg>
+<arg>${tc_id}</arg>
+<arg>${TEST NAME}</arg>
+<arg>${data}</arg>
+<arg>${precondition}</arg>
+<arg>${severity}</arg>
+<arg>${meta}</arg>
+<arg>${group_label}</arg>
+<doc>Begin the record of the running test. ``test_data`` is an ordered dict (label -&gt; value).</doc>
+<status status="PASS" start="2026-10-21T22:11:33.188704" elapsed="0.000787"/>
+</kw>
+<arg>${REPORT_SUITE}</arg>
+<arg>${EMPTY}</arg>
+<arg>${tc_id}</arg>
+<arg>${data}</arg>
+<arg>Browser is open at ${YAHOO_URL} and the registration form is loaded and ready</arg>
+<arg>${severity}</arg>
+<status status="PASS" start="2026-10-21T22:11:33.187455" elapsed="0.002132"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Open Yahoo Page" owner="yahoo_test_case">
+<kw name="Open New Context" owner="common">
+<kw name="New Context" owner="Browser">
+<msg time="2026-10-21T22:11:33.192421" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "locale": "en-US",
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1000,
+    "height": 1100
+  }
+}</msg>
+<msg time="2026-10-21T22:11:33.196508" level="INFO">Successfully created context. </msg>
+<msg time="2026-10-21T22:11:33.196588" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'locale': 'en-US', 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1000, 'height': 1100}}</msg>
+<arg>viewport=${VIEWPORT}</arg>
+<arg>locale=en-US</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.190699" elapsed="0.005963"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:33.190394" elapsed="0.006376"/>
+</kw>
+<kw name="Open Create Account Page" owner="yahoo_create_account_page">
+<kw name="Open Yahoo Create Account Page" owner="yahoo_common">
+<kw name="Open Page With Retry" owner="common">
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${NAV_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.198306" elapsed="0.002227"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="New Page" owner="Browser">
+<msg time="2026-10-21T22:11:34.233254" level="INFO">Successfully initialized new page object and opened url: https://login.yahoo.com/account/create</msg>
+<arg>${url}</arg>
+<arg>wait_until=domcontentloaded</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.201314" elapsed="1.032124"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>New Page</arg>
+<arg>${url}</arg>
+<arg>wait_until=domcontentloaded</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.200729" elapsed="1.032808"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:34.233691" elapsed="0.002218"/>
+</kw>
+<arg>${YAHOO_URL}</arg>
+<status status="PASS" start="2026-10-21T22:11:33.197898" elapsed="1.038127"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-21T22:11:34.267103" level="INFO">Waited for Element with selector id=reg-firstName at state visible</msg>
+<arg>${YH_FIRST_NAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-10-21T22:11:34.236170" elapsed="0.031181"/>
+</kw>
+<kw name="Wait For Function" owner="Browser">
+<msg time="2026-10-21T22:11:35.368194" level="INFO">Wait For Function completed successfully.</msg>
+<arg>${YH_HYDRATED_JS}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Polls JavaScript expression or function in browser until it returns a (JavaScript) truthy value.</doc>
+<status status="PASS" start="2026-10-21T22:11:34.267682" elapsed="1.100648"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:33.197500" elapsed="2.170940"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:33.196959" elapsed="2.171532"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:33.190079" elapsed="2.178454"/>
+</kw>
+<msg time="2026-10-21T22:11:35.368637" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:35.368677" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>Open Yahoo Page</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.189714" elapsed="2.178984"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>Setup failed: ${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:35.369229" elapsed="0.000191"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:35.368798" elapsed="0.000719"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:35.368770" elapsed="0.000814"/>
+</if>
+<arg>${data}</arg>
+<arg>${severity}</arg>
+<doc>Pre-condition shared by all tests: the registration page is open and ready for input.</doc>
+<status status="PASS" start="2026-10-21T22:11:33.186420" elapsed="2.183250"/>
+</kw>
+<variable name="${EXPECTED_TEXT}" scope="TEST">
+<msg time="2026-10-21T22:11:35.370022" level="INFO">${EXPECTED_TEXT} = strength Strong, no password error</msg>
+<var>strength Strong, no password error</var>
+<status status="PASS" start="2026-10-21T22:11:35.369742" elapsed="0.000315"/>
+</variable>
+<kw name="Run Test Step" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:35.371475" level="INFO">${STEP_NO} = 1</msg>
+<var>${{ ${STEP_NO} + 1 }}</var>
+<status status="PASS" start="2026-10-21T22:11:35.370860" elapsed="0.000648"/>
+</variable>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:35.372183" level="INFO">${STEP_ACTUAL} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:35.371568" elapsed="0.000649"/>
+</variable>
+<variable name="${STEP_EVIDENCE}" scope="TEST">
+<msg time="2026-10-21T22:11:35.373238" level="INFO">${STEP_EVIDENCE} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:35.372276" elapsed="0.001026"/>
+</variable>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Type Into Field" owner="common">
+<kw name="Fill Text" owner="Browser">
+<msg time="2026-10-21T22:11:35.375655" level="INFO">Fills the text 'Str0ng!Pass2026' in the given field.</msg>
+<arg>${locator}</arg>
+<arg>${value}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.375093" elapsed="0.229763"/>
+</kw>
+<arg>@{args}</arg>
+<status status="PASS" start="2026-10-21T22:11:35.374279" elapsed="0.230770"/>
+</kw>
+<msg time="2026-10-21T22:11:35.605248" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:35.605321" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>${keyword}</arg>
+<arg>@{args}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.373535" elapsed="0.231909"/>
+</kw>
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="Capture Yahoo Evidence" owner="yahoo_create_account_page">
+<kw name="Evidence Path" owner="TestRecorder">
+<msg time="2026-10-21T22:11:35.607799" level="INFO">${base} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P02_step1</msg>
+<var>${base}</var>
+<arg>${step_no}</arg>
+<doc>Absolute file name (without extension) for the picture of a step.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.607489" elapsed="0.000344"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2026-10-21T22:11:35.616397" level="INFO">JavaScript executed successfully.</msg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes the given JavaScript in the browser page.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.608375" elapsed="0.008203"/>
+</kw>
+<msg time="2026-10-21T22:11:35.616762" level="INFO">${region_status} = PASS</msg>
+<msg time="2026-10-21T22:11:35.616819" level="INFO">${region} = {'x': 331, 'y': 141.59375, 'width': 338, 'height': 716.53125}</msg>
+<var>${region_status}</var>
+<var>${region}</var>
+<arg>Evaluate JavaScript</arg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.607978" elapsed="0.008868"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-10-21T22:11:35.617929" level="INFO">${crop} = {'x': 331, 'y': 141.59375, 'width': 338, 'height': 716.53125}</msg>
+<var>${crop}</var>
+<arg>"${region_status}" == "PASS"</arg>
+<arg>${region}</arg>
+<arg>${NONE}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.617038" elapsed="0.000934"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-21T22:11:35.753311" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Yahoo_UI/evidence/YH-P02_step1.jpeg" target="_blank"&gt;&lt;img src="Yahoo_UI/evidence/YH-P02_step1.jpeg" style="max-width:800px;max-height:800px;"/&gt;&lt;/a&gt;</msg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.618784" elapsed="0.134737"/>
+</kw>
+<msg time="2026-10-21T22:11:35.753762" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:35.753821" level="INFO">${path} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P02_step1.jpeg</msg>
+<var>${status}</var>
+<var>${path}</var>
+<arg>Take Screenshot</arg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.618169" elapsed="0.135687"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<return>
+<value>${EMPTY}</value>
+<status status="NOT RUN" start="2026-10-21T22:11:35.754357" elapsed="0.000277"/>
+</return>
+<status status="NOT RUN" start="2026-10-21T22:11:35.754007" elapsed="0.000729"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:35.753972" elapsed="0.000802"/>
+</if>
+<return>
+<value>${path}</value>
+<status status="PASS" start="2026-10-21T22:11:35.754821" elapsed="0.000148"/>
+</return>
+<arg>${STEP_NO}</arg>
+<doc>Picture of the registration card; falls back to the whole viewport on other pages (Terms/Privacy).</doc>
+<status status="PASS" start="2026-10-21T22:11:35.606955" elapsed="0.148151"/>
+</kw>
+<msg time="2026-10-21T22:11:35.755199" level="INFO">${picture} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P02_step1.jpeg</msg>
+<var>${picture}</var>
+<arg>${CAPTURE_KEYWORD}</arg>
+<arg>${STEP_NO}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.605797" elapsed="0.149428"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot; and not $STEP_ACTUAL">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${first_line}</var>
+<arg>$message.strip().splitlines()[0] if $message.strip() else 'no message'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:35.755856" elapsed="0.000123"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<var>Step failed: ${first_line}</var>
+<status status="NOT RUN" start="2026-10-21T22:11:35.756053" elapsed="0.000097"/>
+</variable>
+<status status="NOT RUN" start="2026-10-21T22:11:35.755303" elapsed="0.000950"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:35.755287" elapsed="0.001004"/>
+</if>
+<kw name="Add Step Record" owner="TestRecorder">
+<arg>${description}</arg>
+<arg>${expected}</arg>
+<arg>${status}</arg>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${picture}</arg>
+<arg>${STEP_EVIDENCE}</arg>
+<status status="PASS" start="2026-10-21T22:11:35.756394" elapsed="0.000772"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:35.757594" elapsed="0.000097"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:35.757289" elapsed="0.000450"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:35.757269" elapsed="0.000506"/>
+</if>
+<arg>Enter the strong password '${password}'</arg>
+<arg>The password field shows the value</arg>
+<arg>Type Into Field</arg>
+<arg>${YH_PASSWORD}</arg>
+<arg>${password}</arg>
+<doc>Runs a step keyword, takes the evidence at the expected result (pass or fail), records the step
+and fails the test when the step failed.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.370403" elapsed="0.387426"/>
+</kw>
+<kw name="Run Test Step" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:35.759157" level="INFO">${STEP_NO} = 2</msg>
+<var>${{ ${STEP_NO} + 1 }}</var>
+<status status="PASS" start="2026-10-21T22:11:35.758504" elapsed="0.000705"/>
+</variable>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:35.759924" level="INFO">${STEP_ACTUAL} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:35.759277" elapsed="0.000678"/>
+</variable>
+<variable name="${STEP_EVIDENCE}" scope="TEST">
+<msg time="2026-10-21T22:11:35.760630" level="INFO">${STEP_EVIDENCE} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:35.760011" elapsed="0.000653"/>
+</variable>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Verify Password Is Strong And Accepted" owner="yahoo_create_account_page">
+<kw name="Wait For Password Strength" owner="yahoo_common">
+<kw name="Get Text" owner="Browser">
+<msg time="2026-10-21T22:11:35.967032" level="INFO">Text: ['Strong']</msg>
+<arg>${YH_PASSWORD_STRENGTH}</arg>
+<arg>*=</arg>
+<arg>${expected}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.762095" elapsed="0.205061"/>
+</kw>
+<arg>Strong</arg>
+<status status="PASS" start="2026-10-21T22:11:35.761743" elapsed="0.205529"/>
+</kw>
+<kw name="Read Password Strength" owner="yahoo_common">
+<kw name="Read Element Text" owner="common">
+<kw name="Get Text" owner="Browser">
+<msg time="2026-10-21T22:11:35.979406" level="INFO">Text: ['Strong']</msg>
+<msg time="2026-10-21T22:11:35.979846" level="INFO">${text} = Strong</msg>
+<var>${text}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns text attribute of the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.968453" elapsed="0.011453"/>
+</kw>
+<return>
+<value>${text}</value>
+<status status="PASS" start="2026-10-21T22:11:35.980040" elapsed="0.000251"/>
+</return>
+<msg time="2026-10-21T22:11:35.980548" level="INFO">${strength} = Strong</msg>
+<var>${strength}</var>
+<arg>${YH_PASSWORD_STRENGTH}</arg>
+<status status="PASS" start="2026-10-21T22:11:35.968007" elapsed="0.012583"/>
+</kw>
+<return>
+<value>${strength}</value>
+<status status="PASS" start="2026-10-21T22:11:35.980678" elapsed="0.000199"/>
+</return>
+<msg time="2026-10-21T22:11:35.981078" level="INFO">${strength} = Strong</msg>
+<var>${strength}</var>
+<status status="PASS" start="2026-10-21T22:11:35.967473" elapsed="0.013644"/>
+</kw>
+<kw name="Read Field Error Text" owner="yahoo_common">
+<kw name="Get Element Count" owner="Browser">
+<msg time="2026-10-21T22:11:35.988333" level="INFO">${count} = 0</msg>
+<var>${count}</var>
+<arg>${locator}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the count of elements found with ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.982285" elapsed="0.006234"/>
+</kw>
+<if>
+<branch type="IF" condition="${count} == 0">
+<return>
+<value>${EMPTY}</value>
+<status status="PASS" start="2026-10-21T22:11:35.989442" elapsed="0.000225"/>
+</return>
+<status status="PASS" start="2026-10-21T22:11:35.988812" elapsed="0.000955"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:35.988766" elapsed="0.001065"/>
+</if>
+<kw name="Read Element Text" owner="common">
+<var>${text}</var>
+<arg>${locator}</arg>
+<status status="NOT RUN" start="2026-10-21T22:11:35.990110" elapsed="0.000343"/>
+</kw>
+<return>
+<value>${text}</value>
+<status status="NOT RUN" start="2026-10-21T22:11:35.990577" elapsed="0.000186"/>
+</return>
+<msg time="2026-10-21T22:11:35.991832" level="INFO">${error} = </msg>
+<var>${error}</var>
+<arg>${YH_ERR_PASSWORD}</arg>
+<status status="PASS" start="2026-10-21T22:11:35.981444" elapsed="0.010445"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:35.992531" level="INFO">${STEP_ACTUAL} = strength: 'Strong', password error: ''</msg>
+<var>strength: '${strength}', password error: '${error}'</var>
+<status status="PASS" start="2026-10-21T22:11:35.992044" elapsed="0.000547"/>
+</variable>
+<kw name="Should Be Empty" owner="BuiltIn">
+<msg time="2026-10-21T22:11:35.993792" level="INFO">Length is 0.</msg>
+<arg>${error}</arg>
+<arg>Password error is displayed: ${error}</arg>
+<doc>Verifies that the given item is empty.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.992862" elapsed="0.001086"/>
+</kw>
+<arg>@{args}</arg>
+<status status="PASS" start="2026-10-21T22:11:35.761330" elapsed="0.232763"/>
+</kw>
+<msg time="2026-10-21T22:11:35.994268" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:35.994340" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>${keyword}</arg>
+<arg>@{args}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.760805" elapsed="0.233574"/>
+</kw>
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="Capture Yahoo Evidence" owner="yahoo_create_account_page">
+<kw name="Evidence Path" owner="TestRecorder">
+<msg time="2026-10-21T22:11:35.996812" level="INFO">${base} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P02_step2</msg>
+<var>${base}</var>
+<arg>${step_no}</arg>
+<doc>Absolute file name (without extension) for the picture of a step.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.996334" elapsed="0.000531"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2026-10-21T22:11:36.003800" level="INFO">JavaScript executed successfully.</msg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes the given JavaScript in the browser page.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.997781" elapsed="0.006379"/>
+</kw>
+<msg time="2026-10-21T22:11:36.004464" level="INFO">${region_status} = PASS</msg>
+<msg time="2026-10-21T22:11:36.004567" level="INFO">${region} = {'x': 331, 'y': 141.59375, 'width': 338, 'height': 744.53125}</msg>
+<var>${region_status}</var>
+<var>${region}</var>
+<arg>Evaluate JavaScript</arg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.997087" elapsed="0.007525"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-10-21T22:11:36.006611" level="INFO">${crop} = {'x': 331, 'y': 141.59375, 'width': 338, 'height': 744.53125}</msg>
+<var>${crop}</var>
+<arg>"${region_status}" == "PASS"</arg>
+<arg>${region}</arg>
+<arg>${NONE}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.005174" elapsed="0.001505"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-21T22:11:36.049987" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Yahoo_UI/evidence/YH-P02_step2.jpeg" target="_blank"&gt;&lt;img src="Yahoo_UI/evidence/YH-P02_step2.jpeg" style="max-width:800px;max-height:800px;"/&gt;&lt;/a&gt;</msg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.007889" elapsed="0.042287"/>
+</kw>
+<msg time="2026-10-21T22:11:36.050356" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:36.050407" level="INFO">${path} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P02_step2.jpeg</msg>
+<var>${status}</var>
+<var>${path}</var>
+<arg>Take Screenshot</arg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.006991" elapsed="0.043442"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<return>
+<value>${EMPTY}</value>
+<status status="NOT RUN" start="2026-10-21T22:11:36.050915" elapsed="0.000128"/>
+</return>
+<status status="NOT RUN" start="2026-10-21T22:11:36.050573" elapsed="0.000535"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:36.050538" elapsed="0.000612"/>
+</if>
+<return>
+<value>${path}</value>
+<status status="PASS" start="2026-10-21T22:11:36.051187" elapsed="0.000116"/>
+</return>
+<arg>${STEP_NO}</arg>
+<doc>Picture of the registration card; falls back to the whole viewport on other pages (Terms/Privacy).</doc>
+<status status="PASS" start="2026-10-21T22:11:35.995597" elapsed="0.055848"/>
+</kw>
+<msg time="2026-10-21T22:11:36.051554" level="INFO">${picture} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P02_step2.jpeg</msg>
+<var>${picture}</var>
+<arg>${CAPTURE_KEYWORD}</arg>
+<arg>${STEP_NO}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.994621" elapsed="0.056963"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot; and not $STEP_ACTUAL">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${first_line}</var>
+<arg>$message.strip().splitlines()[0] if $message.strip() else 'no message'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:36.052113" elapsed="0.000114"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<var>Step failed: ${first_line}</var>
+<status status="NOT RUN" start="2026-10-21T22:11:36.052303" elapsed="0.000112"/>
+</variable>
+<status status="NOT RUN" start="2026-10-21T22:11:36.051671" elapsed="0.000798"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:36.051653" elapsed="0.000852"/>
+</if>
+<kw name="Add Step Record" owner="TestRecorder">
+<arg>${description}</arg>
+<arg>${expected}</arg>
+<arg>${status}</arg>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${picture}</arg>
+<arg>${STEP_EVIDENCE}</arg>
+<status status="PASS" start="2026-10-21T22:11:36.052621" elapsed="0.001048"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:36.054145" elapsed="0.000107"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:36.053793" elapsed="0.000515"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:36.053772" elapsed="0.000577"/>
+</if>
+<arg>Observe the password strength indicator</arg>
+<arg>Strength is "Strong" and no warning is shown at the password field</arg>
+<arg>Verify Password Is Strong And Accepted</arg>
+<doc>Runs a step keyword, takes the evidence at the expected result (pass or fail), records the step
+and fails the test when the step failed.</doc>
+<status status="PASS" start="2026-10-21T22:11:35.758107" elapsed="0.296297"/>
+</kw>
+<arg>${VALID_PASSWORD}</arg>
+<arg>High</arg>
+<status status="PASS" start="2026-10-21T22:11:33.181634" elapsed="2.872842"/>
+</kw>
+<kw name="Finish Yahoo Test" owner="yahoo_test_case" type="TEARDOWN">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-10-21T22:11:36.055694" level="INFO">${expected} = strength Strong, no password error</msg>
+<var>${expected}</var>
+<arg>${EXPECTED_TEXT}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.055231" elapsed="0.000501"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-10-21T22:11:36.056361" level="INFO">${actual} = strength: 'Strong', password error: ''</msg>
+<var>${actual}</var>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.055882" elapsed="0.000512"/>
+</kw>
+<kw name="End Test Record" owner="common">
+<kw name="Finish Test Record" owner="TestRecorder">
+<arg>${TEST STATUS}</arg>
+<arg>${TEST MESSAGE}</arg>
+<arg>${expected}</arg>
+<arg>${actual}</arg>
+<doc>Store the result; for FAIL also log a defect that points at the picture of the failed step.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.057103" elapsed="0.001168"/>
+</kw>
+<arg>${expected}</arg>
+<arg>${actual}</arg>
+<status status="PASS" start="2026-10-21T22:11:36.056573" elapsed="0.001806"/>
+</kw>
+<kw name="Close Current Context" owner="common">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Context" owner="Browser">
+<msg time="2026-10-21T22:11:36.061837" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2026-10-21T22:11:36.063662" level="INFO">Returned active browser id. CURRENT</msg>
+<msg time="2026-10-21T22:11:36.065356" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2026-10-21T22:11:36.068883" level="INFO">Returned active context id: CURRENT</msg>
+<msg time="2026-10-21T22:11:36.069563" level="INFO">Switching context to context=5450dcb3-7660-4695-81a0-b43f7a053316 in CURRENT</msg>
+<msg time="2026-10-21T22:11:36.074452" level="INFO">Successfully changed active context: context=5450dcb3-7660-4695-81a0-b43f7a053316</msg>
+<msg time="2026-10-21T22:11:36.082375" level="INFO">Successfully closed Context</msg>
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.059436" elapsed="0.023346"/>
+</kw>
+<arg>Close Context</arg>
+<arg>CURRENT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.058997" elapsed="0.024034"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:36.058541" elapsed="0.024728"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:36.054747" elapsed="0.028622"/>
+</kw>
+<tag>positive</tag>
+<tag>ui</tag>
+<tag>yahoo</tag>
+<status status="PASS" start="2026-10-21T22:11:33.179649" elapsed="2.903800"/>
+</test>
+<test id="s1-s1-t3" name="YH-P03 Terms link opens" line="21">
+<kw name="Legal Link Opens" owner="yahoo_test_case">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-10-21T22:11:36.094212" level="INFO">${data} = {'Link': 'Terms', 'Expected URL contains': 'legal.yahoo.com'}</msg>
+<var>${data}</var>
+<arg>Link=${link_name}</arg>
+<arg>Expected URL contains=${url_part}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.093155" elapsed="0.001155"/>
+</kw>
+<kw name="Prepare Yahoo Test" owner="yahoo_test_case">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-21T22:11:36.096485" level="INFO">${tc_id} = YH-P03</msg>
+<var>${tc_id}</var>
+<arg>$TEST_NAME.split()[0]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.095566" elapsed="0.000968"/>
+</kw>
+<kw name="Begin Test Record" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:36.098878" level="INFO">${STEP_NO} = 0</msg>
+<var>0</var>
+<status status="PASS" start="2026-10-21T22:11:36.098443" elapsed="0.000500"/>
+</variable>
+<kw name="Start Test Record" owner="TestRecorder">
+<arg>${suite}</arg>
+<arg>${group}</arg>
+<arg>${tc_id}</arg>
+<arg>${TEST NAME}</arg>
+<arg>${data}</arg>
+<arg>${precondition}</arg>
+<arg>${severity}</arg>
+<arg>${meta}</arg>
+<arg>${group_label}</arg>
+<doc>Begin the record of the running test. ``test_data`` is an ordered dict (label -&gt; value).</doc>
+<status status="PASS" start="2026-10-21T22:11:36.099156" elapsed="0.001081"/>
+</kw>
+<arg>${REPORT_SUITE}</arg>
+<arg>${EMPTY}</arg>
+<arg>${tc_id}</arg>
+<arg>${data}</arg>
+<arg>Browser is open at ${YAHOO_URL} and the registration form is loaded and ready</arg>
+<arg>${severity}</arg>
+<status status="PASS" start="2026-10-21T22:11:36.096821" elapsed="0.003654"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Open Yahoo Page" owner="yahoo_test_case">
+<kw name="Open New Context" owner="common">
+<kw name="New Context" owner="Browser">
+<msg time="2026-10-21T22:11:36.105985" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "locale": "en-US",
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1000,
+    "height": 1100
+  }
+}</msg>
+<msg time="2026-10-21T22:11:36.111494" level="INFO">Successfully created context. </msg>
+<msg time="2026-10-21T22:11:36.111607" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'locale': 'en-US', 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1000, 'height': 1100}}</msg>
+<arg>viewport=${VIEWPORT}</arg>
+<arg>locale=en-US</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.102817" elapsed="0.008900"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:36.102266" elapsed="0.009581"/>
+</kw>
+<kw name="Open Create Account Page" owner="yahoo_create_account_page">
+<kw name="Open Yahoo Create Account Page" owner="yahoo_common">
+<kw name="Open Page With Retry" owner="common">
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${NAV_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.113692" elapsed="0.002352"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="New Page" owner="Browser">
+<msg time="2026-10-21T22:11:37.190491" level="INFO">Successfully initialized new page object and opened url: https://login.yahoo.com/account/create</msg>
+<arg>${url}</arg>
+<arg>wait_until=domcontentloaded</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.117060" elapsed="1.073610"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>New Page</arg>
+<arg>${url}</arg>
+<arg>wait_until=domcontentloaded</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.116259" elapsed="1.074503"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:37.190922" elapsed="0.001974"/>
+</kw>
+<arg>${YAHOO_URL}</arg>
+<status status="PASS" start="2026-10-21T22:11:36.113225" elapsed="1.079781"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-21T22:11:37.229203" level="INFO">Waited for Element with selector id=reg-firstName at state visible</msg>
+<arg>${YH_FIRST_NAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-10-21T22:11:37.193152" elapsed="0.036279"/>
+</kw>
+<kw name="Wait For Function" owner="Browser">
+<msg time="2026-10-21T22:11:38.312868" level="INFO">Wait For Function completed successfully.</msg>
+<arg>${YH_HYDRATED_JS}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Polls JavaScript expression or function in browser until it returns a (JavaScript) truthy value.</doc>
+<status status="PASS" start="2026-10-21T22:11:37.229689" elapsed="1.083309"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:36.112729" elapsed="2.200369"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:36.112066" elapsed="2.201079"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:36.101634" elapsed="2.211547"/>
+</kw>
+<msg time="2026-10-21T22:11:38.313295" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:38.313335" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>Open Yahoo Page</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.100897" elapsed="2.212457"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>Setup failed: ${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:38.313868" elapsed="0.000108"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:38.313481" elapsed="0.000549"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:38.313453" elapsed="0.000617"/>
+</if>
+<arg>${data}</arg>
+<arg>${severity}</arg>
+<doc>Pre-condition shared by all tests: the registration page is open and ready for input.</doc>
+<status status="PASS" start="2026-10-21T22:11:36.094697" elapsed="2.219429"/>
+</kw>
+<variable name="${EXPECTED_TEXT}" scope="TEST">
+<msg time="2026-10-21T22:11:38.314409" level="INFO">${EXPECTED_TEXT} = Terms page opens (legal.yahoo.com)</msg>
+<var>${link_name} page opens (${url_part})</var>
+<status status="PASS" start="2026-10-21T22:11:38.314178" elapsed="0.000260"/>
+</variable>
+<kw name="Run Test Step" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:38.315724" level="INFO">${STEP_NO} = 1</msg>
+<var>${{ ${STEP_NO} + 1 }}</var>
+<status status="PASS" start="2026-10-21T22:11:38.315093" elapsed="0.000666"/>
+</variable>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:38.316412" level="INFO">${STEP_ACTUAL} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:38.315819" elapsed="0.000622"/>
+</variable>
+<variable name="${STEP_EVIDENCE}" scope="TEST">
+<msg time="2026-10-21T22:11:38.317042" level="INFO">${STEP_EVIDENCE} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:38.316494" elapsed="0.000576"/>
+</variable>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Open Legal Link And Verify Page" owner="yahoo_create_account_page">
+<kw name="Click Legal Link" owner="yahoo_common">
+<kw name="Click Element" owner="common">
+<kw name="Click" owner="Browser">
+<msg time="2026-10-21T22:11:38.319336" level="INFO">Clicks the element 'css=form#challenge-form p a[data-ylk*="slk:terms"]'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:38.318871" elapsed="0.218108"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:38.318525" elapsed="0.218590"/>
+</kw>
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-10-21T22:11:38.537984" level="INFO">Switching to page NEW,context CURRENT, browser CURRENT</msg>
+<msg time="2026-10-21T22:11:39.874707" level="INFO">Activated new page page=e2426f15-c1d0-4b28-9ddf-7bca1083b6de</msg>
+<arg>NEW</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-10-21T22:11:38.537274" elapsed="1.337575"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:38.318153" elapsed="1.556781"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-10-21T22:11:39.876652" level="INFO">${url} = https://legal.yahoo.com/sg/en/yahoo/terms/otos/index.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-10-21T22:11:39.875051" elapsed="0.001634"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:39.876983" level="INFO">${STEP_ACTUAL} = https://legal.yahoo.com/sg/en/yahoo/terms/otos/index.html</msg>
+<var>${url}</var>
+<status status="PASS" start="2026-10-21T22:11:39.876754" elapsed="0.000256"/>
+</variable>
+<kw name="Get Url" owner="Browser">
+<arg>*=</arg>
+<arg>${expected_url_part}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-10-21T22:11:39.877125" elapsed="0.001294"/>
+</kw>
+<arg>@{args}</arg>
+<status status="PASS" start="2026-10-21T22:11:38.317757" elapsed="1.560739"/>
+</kw>
+<msg time="2026-10-21T22:11:39.878577" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:39.878607" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>${keyword}</arg>
+<arg>@{args}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:38.317259" elapsed="1.561363"/>
+</kw>
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="Capture Yahoo Evidence" owner="yahoo_create_account_page">
+<kw name="Evidence Path" owner="TestRecorder">
+<msg time="2026-10-21T22:11:39.879689" level="INFO">${base} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P03_step1</msg>
+<var>${base}</var>
+<arg>${step_no}</arg>
+<doc>Absolute file name (without extension) for the picture of a step.</doc>
+<status status="PASS" start="2026-10-21T22:11:39.879495" elapsed="0.000214"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2026-10-21T22:11:40.104709" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-1.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-1.png" style="max-width:800px;max-height:800px;"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-10-21T22:11:40.104847" level="INFO">See also file:///C:/Users/suraw/Downloads/Test_Interview/Test_Result/playwright-log-1792595488452881600.txt for additional details.</msg>
+<msg time="2026-10-21T22:11:40.105363" level="FAIL">Error: page.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')
+    at eval (eval at evaluate (:311:30), &lt;anonymous&gt;:1:83)
+    at UtilityScript.evaluate (&lt;anonymous&gt;:313:16)
+    at UtilityScript.&lt;anonymous&gt; (&lt;anonymous&gt;:1:44)</msg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes the given JavaScript in the browser page.</doc>
+<status status="FAIL" start="2026-10-21T22:11:39.880091" elapsed="0.230211">Error: page.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')
+    at eval (eval at evaluate (:311:30), &lt;anonymous&gt;:1:83)
+    at UtilityScript.evaluate (&lt;anonymous&gt;:313:16)
+    at UtilityScript.&lt;anonymous&gt; (&lt;anonymous&gt;:1:44)</status>
+</kw>
+<msg time="2026-10-21T22:11:40.110531" level="INFO">${region_status} = FAIL</msg>
+<msg time="2026-10-21T22:11:40.110575" level="INFO">${region} = Error: page.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')
+    at eval (eval at evaluate (:311:30), &lt;anonymous&gt;:1:83)
+    at UtilityScript.evaluate (&lt;anonymous&gt;:...</msg>
+<var>${region_status}</var>
+<var>${region}</var>
+<arg>Evaluate JavaScript</arg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:39.879801" elapsed="0.230796"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-10-21T22:11:40.111367" level="INFO">${crop} = None</msg>
+<var>${crop}</var>
+<arg>"${region_status}" == "PASS"</arg>
+<arg>${region}</arg>
+<arg>${NONE}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.110770" elapsed="0.000632"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-21T22:11:40.145550" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Yahoo_UI/evidence/YH-P03_step1.jpeg" target="_blank"&gt;&lt;img src="Yahoo_UI/evidence/YH-P03_step1.jpeg" style="max-width:800px;max-height:800px;"/&gt;&lt;/a&gt;</msg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.112093" elapsed="0.033701"/>
+</kw>
+<msg time="2026-10-21T22:11:40.145977" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:40.146018" level="INFO">${path} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P03_step1.jpeg</msg>
+<var>${status}</var>
+<var>${path}</var>
+<arg>Take Screenshot</arg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.111582" elapsed="0.034456"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<return>
+<value>${EMPTY}</value>
+<status status="NOT RUN" start="2026-10-21T22:11:40.146445" elapsed="0.000109"/>
+</return>
+<status status="NOT RUN" start="2026-10-21T22:11:40.146156" elapsed="0.000452"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:40.146126" elapsed="0.000519"/>
+</if>
+<return>
+<value>${path}</value>
+<status status="PASS" start="2026-10-21T22:11:40.146680" elapsed="0.000102"/>
+</return>
+<arg>${STEP_NO}</arg>
+<doc>Picture of the registration card; falls back to the whole viewport on other pages (Terms/Privacy).</doc>
+<status status="PASS" start="2026-10-21T22:11:39.879181" elapsed="0.267841"/>
+</kw>
+<msg time="2026-10-21T22:11:40.147138" level="INFO">${picture} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P03_step1.jpeg</msg>
+<var>${picture}</var>
+<arg>${CAPTURE_KEYWORD}</arg>
+<arg>${STEP_NO}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2026-10-21T22:11:39.878728" elapsed="0.268438"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot; and not $STEP_ACTUAL">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${first_line}</var>
+<arg>$message.strip().splitlines()[0] if $message.strip() else 'no message'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:40.147697" elapsed="0.000127"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<var>Step failed: ${first_line}</var>
+<status status="NOT RUN" start="2026-10-21T22:11:40.147929" elapsed="0.000194"/>
+</variable>
+<status status="NOT RUN" start="2026-10-21T22:11:40.147256" elapsed="0.000957"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:40.147235" elapsed="0.001018"/>
+</if>
+<kw name="Add Step Record" owner="TestRecorder">
+<arg>${description}</arg>
+<arg>${expected}</arg>
+<arg>${status}</arg>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${picture}</arg>
+<arg>${STEP_EVIDENCE}</arg>
+<status status="PASS" start="2026-10-21T22:11:40.148384" elapsed="0.000846"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:40.149657" elapsed="0.000091"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:40.149344" elapsed="0.000468"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:40.149324" elapsed="0.000527"/>
+</if>
+<arg>Click the '${link_name}' link</arg>
+<arg>A new tab opens with the ${link_name} page (URL contains ${url_part})</arg>
+<arg>Open Legal Link And Verify Page</arg>
+<arg>${locator}</arg>
+<arg>${url_part}</arg>
+<doc>Runs a step keyword, takes the evidence at the expected result (pass or fail), records the step
+and fails the test when the step failed.</doc>
+<status status="PASS" start="2026-10-21T22:11:38.314687" elapsed="1.835220"/>
+</kw>
+<arg>Terms</arg>
+<arg>${YH_TERMS_LINK}</arg>
+<arg>${TERMS_URL_PART}</arg>
+<arg>Medium</arg>
+<status status="PASS" start="2026-10-21T22:11:36.092107" elapsed="4.057866"/>
+</kw>
+<kw name="Finish Yahoo Test" owner="yahoo_test_case" type="TEARDOWN">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-10-21T22:11:40.151075" level="INFO">${expected} = Terms page opens (legal.yahoo.com)</msg>
+<var>${expected}</var>
+<arg>${EXPECTED_TEXT}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.150654" elapsed="0.000454"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-10-21T22:11:40.151612" level="INFO">${actual} = https://legal.yahoo.com/sg/en/yahoo/terms/otos/index.html</msg>
+<var>${actual}</var>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.151243" elapsed="0.000399"/>
+</kw>
+<kw name="End Test Record" owner="common">
+<kw name="Finish Test Record" owner="TestRecorder">
+<arg>${TEST STATUS}</arg>
+<arg>${TEST MESSAGE}</arg>
+<arg>${expected}</arg>
+<arg>${actual}</arg>
+<doc>Store the result; for FAIL also log a defect that points at the picture of the failed step.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.152278" elapsed="0.000933"/>
+</kw>
+<arg>${expected}</arg>
+<arg>${actual}</arg>
+<status status="PASS" start="2026-10-21T22:11:40.151790" elapsed="0.001518"/>
+</kw>
+<kw name="Close Current Context" owner="common">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Context" owner="Browser">
+<msg time="2026-10-21T22:11:40.156802" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2026-10-21T22:11:40.158554" level="INFO">Returned active browser id. CURRENT</msg>
+<msg time="2026-10-21T22:11:40.160126" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2026-10-21T22:11:40.163776" level="INFO">Returned active context id: CURRENT</msg>
+<msg time="2026-10-21T22:11:40.164431" level="INFO">Switching context to context=d3587cf9-df73-4a59-8ab4-0befb630934f in CURRENT</msg>
+<msg time="2026-10-21T22:11:40.168116" level="INFO">Successfully changed active context: context=d3587cf9-df73-4a59-8ab4-0befb630934f</msg>
+<msg time="2026-10-21T22:11:40.182540" level="INFO">Successfully closed Context</msg>
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.154261" elapsed="0.028542"/>
+</kw>
+<arg>Close Context</arg>
+<arg>CURRENT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.153867" elapsed="0.029089"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:40.153447" elapsed="0.029618"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:40.150221" elapsed="0.032930"/>
+</kw>
+<tag>positive</tag>
+<tag>ui</tag>
+<tag>yahoo</tag>
+<status status="PASS" start="2026-10-21T22:11:36.088348" elapsed="4.094880"/>
+</test>
+<test id="s1-s1-t4" name="YH-P04 Privacy link opens" line="24">
+<kw name="Legal Link Opens" owner="yahoo_test_case">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-10-21T22:11:40.198569" level="INFO">${data} = {'Link': 'Privacy Policy', 'Expected URL contains': 'legal.yahoo.com'}</msg>
+<var>${data}</var>
+<arg>Link=${link_name}</arg>
+<arg>Expected URL contains=${url_part}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.195153" elapsed="0.003506"/>
+</kw>
+<kw name="Prepare Yahoo Test" owner="yahoo_test_case">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-10-21T22:11:40.201387" level="INFO">${tc_id} = YH-P04</msg>
+<var>${tc_id}</var>
+<arg>$TEST_NAME.split()[0]</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.200314" elapsed="0.001147"/>
+</kw>
+<kw name="Begin Test Record" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:40.204404" level="INFO">${STEP_NO} = 0</msg>
+<var>0</var>
+<status status="PASS" start="2026-10-21T22:11:40.203955" elapsed="0.000511"/>
+</variable>
+<kw name="Start Test Record" owner="TestRecorder">
+<arg>${suite}</arg>
+<arg>${group}</arg>
+<arg>${tc_id}</arg>
+<arg>${TEST NAME}</arg>
+<arg>${data}</arg>
+<arg>${precondition}</arg>
+<arg>${severity}</arg>
+<arg>${meta}</arg>
+<arg>${group_label}</arg>
+<doc>Begin the record of the running test. ``test_data`` is an ordered dict (label -&gt; value).</doc>
+<status status="PASS" start="2026-10-21T22:11:40.204757" elapsed="0.002120"/>
+</kw>
+<arg>${REPORT_SUITE}</arg>
+<arg>${EMPTY}</arg>
+<arg>${tc_id}</arg>
+<arg>${data}</arg>
+<arg>Browser is open at ${YAHOO_URL} and the registration form is loaded and ready</arg>
+<arg>${severity}</arg>
+<status status="PASS" start="2026-10-21T22:11:40.201915" elapsed="0.005208"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Open Yahoo Page" owner="yahoo_test_case">
+<kw name="Open New Context" owner="common">
+<kw name="New Context" owner="Browser">
+<msg time="2026-10-21T22:11:40.215966" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "locale": "en-US",
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1000,
+    "height": 1100
+  }
+}</msg>
+<msg time="2026-10-21T22:11:40.223086" level="INFO">Successfully created context. </msg>
+<msg time="2026-10-21T22:11:40.223421" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'locale': 'en-US', 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1000, 'height': 1100}}</msg>
+<arg>viewport=${VIEWPORT}</arg>
+<arg>locale=en-US</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.211509" elapsed="0.012125"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:40.209851" elapsed="0.014007"/>
+</kw>
+<kw name="Open Create Account Page" owner="yahoo_create_account_page">
+<kw name="Open Yahoo Create Account Page" owner="yahoo_common">
+<kw name="Open Page With Retry" owner="common">
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${NAV_TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.227355" elapsed="0.004458"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="New Page" owner="Browser">
+<msg time="2026-10-21T22:11:41.622370" level="INFO">Successfully initialized new page object and opened url: https://login.yahoo.com/account/create</msg>
+<arg>${url}</arg>
+<arg>wait_until=domcontentloaded</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.233580" elapsed="1.388999"/>
+</kw>
+<arg>3x</arg>
+<arg>2s</arg>
+<arg>New Page</arg>
+<arg>${url}</arg>
+<arg>wait_until=domcontentloaded</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.232422" elapsed="1.390266"/>
+</kw>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>${TIMEOUT}</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:41.622865" elapsed="0.002380"/>
+</kw>
+<arg>${YAHOO_URL}</arg>
+<status status="PASS" start="2026-10-21T22:11:40.226259" elapsed="1.399120"/>
+</kw>
+<kw name="Wait For Elements State" owner="Browser">
+<msg time="2026-10-21T22:11:41.653339" level="INFO">Waited for Element with selector id=reg-firstName at state visible</msg>
+<arg>${YH_FIRST_NAME}</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<status status="PASS" start="2026-10-21T22:11:41.625551" elapsed="0.028016"/>
+</kw>
+<kw name="Wait For Function" owner="Browser">
+<msg time="2026-10-21T22:11:42.745549" level="INFO">Wait For Function completed successfully.</msg>
+<arg>${YH_HYDRATED_JS}</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Polls JavaScript expression or function in browser until it returns a (JavaScript) truthy value.</doc>
+<status status="PASS" start="2026-10-21T22:11:41.653937" elapsed="1.091762"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:40.225272" elapsed="2.520535"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:40.224208" elapsed="2.521642"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:40.208651" elapsed="2.537231"/>
+</kw>
+<msg time="2026-10-21T22:11:42.745975" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:42.746007" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>Open Yahoo Page</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.207496" elapsed="2.538526"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>Setup failed: ${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:42.746517" elapsed="0.000121"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:42.746128" elapsed="0.000557"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:42.746095" elapsed="0.000624"/>
+</if>
+<arg>${data}</arg>
+<arg>${severity}</arg>
+<doc>Pre-condition shared by all tests: the registration page is open and ready for input.</doc>
+<status status="PASS" start="2026-10-21T22:11:40.199403" elapsed="2.547361"/>
+</kw>
+<variable name="${EXPECTED_TEXT}" scope="TEST">
+<msg time="2026-10-21T22:11:42.747009" level="INFO">${EXPECTED_TEXT} = Privacy Policy page opens (legal.yahoo.com)</msg>
+<var>${link_name} page opens (${url_part})</var>
+<status status="PASS" start="2026-10-21T22:11:42.746807" elapsed="0.000226"/>
+</variable>
+<kw name="Run Test Step" owner="common">
+<variable name="${STEP_NO}" scope="TEST">
+<msg time="2026-10-21T22:11:42.748095" level="INFO">${STEP_NO} = 1</msg>
+<var>${{ ${STEP_NO} + 1 }}</var>
+<status status="PASS" start="2026-10-21T22:11:42.747607" elapsed="0.000515"/>
+</variable>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:42.748642" level="INFO">${STEP_ACTUAL} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:42.748171" elapsed="0.000495"/>
+</variable>
+<variable name="${STEP_EVIDENCE}" scope="TEST">
+<msg time="2026-10-21T22:11:42.749198" level="INFO">${STEP_EVIDENCE} = </msg>
+<var>${EMPTY}</var>
+<status status="PASS" start="2026-10-21T22:11:42.748711" elapsed="0.000511"/>
+</variable>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Open Legal Link And Verify Page" owner="yahoo_create_account_page">
+<kw name="Click Legal Link" owner="yahoo_common">
+<kw name="Click Element" owner="common">
+<kw name="Click" owner="Browser">
+<msg time="2026-10-21T22:11:42.751128" level="INFO">Clicks the element 'css=form#challenge-form p a[data-ylk*="slk:privacy"]'.</msg>
+<arg>${locator}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2026-10-21T22:11:42.750713" elapsed="0.190117"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:42.750433" elapsed="0.190513"/>
+</kw>
+<kw name="Switch Page" owner="Browser">
+<msg time="2026-10-21T22:11:42.941650" level="INFO">Switching to page NEW,context CURRENT, browser CURRENT</msg>
+<msg time="2026-10-21T22:11:44.310727" level="INFO">Activated new page page=501f34d6-e9ed-4a45-ad61-1d048cd132f8</msg>
+<arg>NEW</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Switches the active browser page to another open page by ``id`` or ``NEW``.</doc>
+<status status="PASS" start="2026-10-21T22:11:42.941070" elapsed="1.369793"/>
+</kw>
+<arg>${locator}</arg>
+<status status="PASS" start="2026-10-21T22:11:42.750132" elapsed="1.560840"/>
+</kw>
+<kw name="Get Url" owner="Browser">
+<msg time="2026-10-21T22:11:44.312641" level="INFO">${url} = https://legal.yahoo.com/sg/en/yahoo/privacy/index.html</msg>
+<var>${url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.311092" elapsed="0.001581"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<msg time="2026-10-21T22:11:44.312962" level="INFO">${STEP_ACTUAL} = https://legal.yahoo.com/sg/en/yahoo/privacy/index.html</msg>
+<var>${url}</var>
+<status status="PASS" start="2026-10-21T22:11:44.312741" elapsed="0.000247"/>
+</variable>
+<kw name="Get Url" owner="Browser">
+<arg>*=</arg>
+<arg>${expected_url_part}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.313102" elapsed="0.001314"/>
+</kw>
+<arg>@{args}</arg>
+<status status="PASS" start="2026-10-21T22:11:42.749784" elapsed="1.564711"/>
+</kw>
+<msg time="2026-10-21T22:11:44.314567" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:44.314594" level="INFO">${message} = None</msg>
+<var>${status}</var>
+<var>${message}</var>
+<arg>${keyword}</arg>
+<arg>@{args}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:42.749350" elapsed="1.565258"/>
+</kw>
+<kw name="Run Keyword" owner="BuiltIn">
+<kw name="Capture Yahoo Evidence" owner="yahoo_create_account_page">
+<kw name="Evidence Path" owner="TestRecorder">
+<msg time="2026-10-21T22:11:44.315618" level="INFO">${base} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P04_step1</msg>
+<var>${base}</var>
+<arg>${step_no}</arg>
+<doc>Absolute file name (without extension) for the picture of a step.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.315431" elapsed="0.000208"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Evaluate JavaScript" owner="Browser">
+<msg time="2026-10-21T22:11:44.532623" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fail-screenshot-2.png" target="_blank"&gt;&lt;img src="browser/screenshot/fail-screenshot-2.png" style="max-width:800px;max-height:800px;"/&gt;&lt;/a&gt;</msg>
+<msg time="2026-10-21T22:11:44.532747" level="INFO">See also file:///C:/Users/suraw/Downloads/Test_Interview/Test_Result/playwright-log-1792595488452881600.txt for additional details.</msg>
+<msg time="2026-10-21T22:11:44.532852" level="FAIL">Error: page.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')
+    at eval (eval at evaluate (:311:30), &lt;anonymous&gt;:1:83)
+    at UtilityScript.evaluate (&lt;anonymous&gt;:313:16)
+    at UtilityScript.&lt;anonymous&gt; (&lt;anonymous&gt;:1:44)</msg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Executes the given JavaScript in the browser page.</doc>
+<status status="FAIL" start="2026-10-21T22:11:44.316090" elapsed="0.218060">Error: page.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')
+    at eval (eval at evaluate (:311:30), &lt;anonymous&gt;:1:83)
+    at UtilityScript.evaluate (&lt;anonymous&gt;:313:16)
+    at UtilityScript.&lt;anonymous&gt; (&lt;anonymous&gt;:1:44)</status>
+</kw>
+<msg time="2026-10-21T22:11:44.534317" level="INFO">${region_status} = FAIL</msg>
+<msg time="2026-10-21T22:11:44.534350" level="INFO">${region} = Error: page.evaluate: TypeError: Cannot read properties of null (reading 'getBoundingClientRect')
+    at eval (eval at evaluate (:311:30), &lt;anonymous&gt;:1:83)
+    at UtilityScript.evaluate (&lt;anonymous&gt;:...</msg>
+<var>${region_status}</var>
+<var>${region}</var>
+<arg>Evaluate JavaScript</arg>
+<arg>${NONE}</arg>
+<arg>${YH_CARD_REGION_JS}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.315729" elapsed="0.218639"/>
+</kw>
+<kw name="Set Variable If" owner="BuiltIn">
+<msg time="2026-10-21T22:11:44.534928" level="INFO">${crop} = None</msg>
+<var>${crop}</var>
+<arg>"${region_status}" == "PASS"</arg>
+<arg>${region}</arg>
+<arg>${NONE}</arg>
+<doc>Sets variable based on the given condition.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.534503" elapsed="0.000450"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Take Screenshot" owner="Browser">
+<msg time="2026-10-21T22:11:44.569392" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Yahoo_UI/evidence/YH-P04_step1.jpeg" target="_blank"&gt;&lt;img src="Yahoo_UI/evidence/YH-P04_step1.jpeg" style="max-width:800px;max-height:800px;"/&gt;&lt;/a&gt;</msg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.535389" elapsed="0.034129"/>
+</kw>
+<msg time="2026-10-21T22:11:44.569633" level="INFO">${status} = PASS</msg>
+<msg time="2026-10-21T22:11:44.569660" level="INFO">${path} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P04_step1.jpeg</msg>
+<var>${status}</var>
+<var>${path}</var>
+<arg>Take Screenshot</arg>
+<arg>${base}</arg>
+<arg>crop=${crop}</arg>
+<arg>fileType=jpeg</arg>
+<arg>quality=80</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.535085" elapsed="0.034590"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<return>
+<value>${EMPTY}</value>
+<status status="NOT RUN" start="2026-10-21T22:11:44.569957" elapsed="0.000088"/>
+</return>
+<status status="NOT RUN" start="2026-10-21T22:11:44.569760" elapsed="0.000329"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:44.569737" elapsed="0.000378"/>
+</if>
+<return>
+<value>${path}</value>
+<status status="PASS" start="2026-10-21T22:11:44.570141" elapsed="0.000073"/>
+</return>
+<arg>${STEP_NO}</arg>
+<doc>Picture of the registration card; falls back to the whole viewport on other pages (Terms/Privacy).</doc>
+<status status="PASS" start="2026-10-21T22:11:44.315134" elapsed="0.255170"/>
+</kw>
+<msg time="2026-10-21T22:11:44.570370" level="INFO">${picture} = C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\evidence\YH-P04_step1.jpeg</msg>
+<var>${picture}</var>
+<arg>${CAPTURE_KEYWORD}</arg>
+<arg>${STEP_NO}</arg>
+<doc>Executes the given keyword with the given arguments.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.314708" elapsed="0.255679"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot; and not $STEP_ACTUAL">
+<kw name="Evaluate" owner="BuiltIn">
+<var>${first_line}</var>
+<arg>$message.strip().splitlines()[0] if $message.strip() else 'no message'</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:44.570725" elapsed="0.000071"/>
+</kw>
+<variable name="${STEP_ACTUAL}" scope="TEST">
+<var>Step failed: ${first_line}</var>
+<status status="NOT RUN" start="2026-10-21T22:11:44.570844" elapsed="0.000064"/>
+</variable>
+<status status="NOT RUN" start="2026-10-21T22:11:44.570442" elapsed="0.000501"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:44.570430" elapsed="0.000534"/>
+</if>
+<kw name="Add Step Record" owner="TestRecorder">
+<arg>${description}</arg>
+<arg>${expected}</arg>
+<arg>${status}</arg>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${picture}</arg>
+<arg>${STEP_EVIDENCE}</arg>
+<status status="PASS" start="2026-10-21T22:11:44.571151" elapsed="0.000755"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${status}&quot; == &quot;FAIL&quot;">
+<kw name="Fail" owner="BuiltIn">
+<arg>${message}</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2026-10-21T22:11:44.572354" elapsed="0.000080"/>
+</kw>
+<status status="NOT RUN" start="2026-10-21T22:11:44.572025" elapsed="0.000447"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:44.572008" elapsed="0.000489"/>
+</if>
+<arg>Click the '${link_name}' link</arg>
+<arg>A new tab opens with the ${link_name} page (URL contains ${url_part})</arg>
+<arg>Open Legal Link And Verify Page</arg>
+<arg>${locator}</arg>
+<arg>${url_part}</arg>
+<doc>Runs a step keyword, takes the evidence at the expected result (pass or fail), records the step
+and fails the test when the step failed.</doc>
+<status status="PASS" start="2026-10-21T22:11:42.747254" elapsed="1.825278"/>
+</kw>
+<arg>Privacy Policy</arg>
+<arg>${YH_PRIVACY_LINK}</arg>
+<arg>${PRIVACY_URL_PART}</arg>
+<arg>Medium</arg>
+<status status="PASS" start="2026-10-21T22:11:40.193935" elapsed="4.378641"/>
+</kw>
+<kw name="Finish Yahoo Test" owner="yahoo_test_case" type="TEARDOWN">
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-10-21T22:11:44.573306" level="INFO">${expected} = Privacy Policy page opens (legal.yahoo.com)</msg>
+<var>${expected}</var>
+<arg>${EXPECTED_TEXT}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.573019" elapsed="0.000308"/>
+</kw>
+<kw name="Get Variable Value" owner="BuiltIn">
+<msg time="2026-10-21T22:11:44.573668" level="INFO">${actual} = https://legal.yahoo.com/sg/en/yahoo/privacy/index.html</msg>
+<var>${actual}</var>
+<arg>${STEP_ACTUAL}</arg>
+<arg>${EMPTY}</arg>
+<doc>Returns variable value or ``default`` if the variable does not exist.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.573419" elapsed="0.000269"/>
+</kw>
+<kw name="End Test Record" owner="common">
+<kw name="Finish Test Record" owner="TestRecorder">
+<arg>${TEST STATUS}</arg>
+<arg>${TEST MESSAGE}</arg>
+<arg>${expected}</arg>
+<arg>${actual}</arg>
+<doc>Store the result; for FAIL also log a defect that points at the picture of the failed step.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.574270" elapsed="0.000676"/>
+</kw>
+<arg>${expected}</arg>
+<arg>${actual}</arg>
+<status status="PASS" start="2026-10-21T22:11:44.573792" elapsed="0.001220"/>
+</kw>
+<kw name="Close Current Context" owner="common">
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Close Context" owner="Browser">
+<msg time="2026-10-21T22:11:44.577327" level="INFO">Switching browser to CURRENT</msg>
+<msg time="2026-10-21T22:11:44.578666" level="INFO">Returned active browser id. CURRENT</msg>
+<msg time="2026-10-21T22:11:44.579589" level="INFO">Switching context to CURRENT in CURRENT</msg>
+<msg time="2026-10-21T22:11:44.581492" level="INFO">Returned active context id: CURRENT</msg>
+<msg time="2026-10-21T22:11:44.581726" level="INFO">Switching context to context=c728ceb1-f1f0-4203-b39c-c1bec6ddd54d in CURRENT</msg>
+<msg time="2026-10-21T22:11:44.583714" level="INFO">Successfully changed active context: context=c728ceb1-f1f0-4203-b39c-c1bec6ddd54d</msg>
+<msg time="2026-10-21T22:11:44.590906" level="INFO">Successfully closed Context</msg>
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes a Context.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.575653" elapsed="0.015453"/>
+</kw>
+<arg>Close Context</arg>
+<arg>CURRENT</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.575377" elapsed="0.015849"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:44.575116" elapsed="0.016198"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:44.572741" elapsed="0.018632"/>
+</kw>
+<tag>positive</tag>
+<tag>ui</tag>
+<tag>yahoo</tag>
+<status status="PASS" start="2026-10-21T22:11:40.186897" elapsed="4.404526"/>
+</test>
+<kw name="Finish Yahoo Suite" owner="yahoo_test_case" type="TEARDOWN">
+<kw name="Stop Browser Session" owner="common">
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-10-21T22:11:44.727572" level="INFO">Closed all browsers</msg>
+<arg>ALL</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.593996" elapsed="0.133713"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:44.593745" elapsed="0.134047"/>
+</kw>
+<kw name="Export Pdf Reports" owner="report">
+<kw name="Export Suite Reports" owner="TestRecorder">
+<msg time="2026-10-21T22:11:44.771569" level="INFO">${jobs} = [['C:\\Users\\suraw\\Downloads\\Test_Interview\\Test_Result\\Yahoo_UI\\Test_Report.html', 'file:///C:/Users/suraw/Downloads/Test_Interview/Test_Result/Yahoo_UI/Test_Report.html', 'C:\\Users\\suraw\\Do...</msg>
+<var>${jobs}</var>
+<arg>${suite}</arg>
+<arg>${title}</arg>
+<doc>Write the report HTML and return [html, html_uri, pdf, landscape] rows to print as PDF.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.728402" elapsed="0.043207"/>
+</kw>
+<if>
+<branch type="IF" condition="not $jobs">
+<return>
+<status status="NOT RUN" start="2026-10-21T22:11:44.771918" elapsed="0.000064"/>
+</return>
+<status status="NOT RUN" start="2026-10-21T22:11:44.771715" elapsed="0.000304"/>
+</branch>
+<status status="PASS" start="2026-10-21T22:11:44.771691" elapsed="0.000352"/>
+</if>
+<kw name="Set Browser Timeout" owner="Browser">
+<arg>120s</arg>
+<tag>Config</tag>
+<tag>Setter</tag>
+<doc>Sets the timeout used by most input and getter keywords.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.772147" elapsed="0.002403"/>
+</kw>
+<kw name="New Browser" owner="Browser">
+<msg time="2026-10-21T22:11:44.775445" level="INFO">{"browser": "chromium", "headless": true, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\suraw\\Downloads\\Test_Interview\\Test_Result\\browser\\traces\\temp\\7838e6e1-1ba9-47e3-bfbf-f2a3e4330a22"}</msg>
+<msg time="2026-10-21T22:11:44.837951" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":true,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\suraw\\Downloads\\Test_Interview\\Test_Result\\browser\\traces\\temp\\7838e6e1-1ba9-47e3-bfbf-f2a3e4330a22"}</msg>
+<arg>chromium</arg>
+<arg>headless=True</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.774749" elapsed="0.063432"/>
+</kw>
+<kw name="New Context" owner="Browser">
+<msg time="2026-10-21T22:11:44.840596" level="INFO">{
+  "acceptDownloads": true,
+  "bypassCSP": false,
+  "forcedColors": "none",
+  "ignoreHTTPSErrors": false,
+  "javaScriptEnabled": true,
+  "offline": false,
+  "reducedMotion": "no-preference",
+  "serviceWorkers": "allow",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  }
+}</msg>
+<msg time="2026-10-21T22:11:44.846722" level="INFO">Successfully created context. </msg>
+<msg time="2026-10-21T22:11:44.846854" level="INFO">{'acceptDownloads': True, 'bypassCSP': False, 'forcedColors': 'none', 'ignoreHTTPSErrors': False, 'javaScriptEnabled': True, 'offline': False, 'reducedMotion': 'no-preference', 'serviceWorkers': 'allow', 'viewport': {'width': 1280, 'height': 720}}</msg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.838474" elapsed="0.008535"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="New Page" owner="Browser">
+<msg time="2026-10-21T22:11:45.038122" level="INFO">Successfully initialized new page object and opened url: file:///C:/Users/suraw/Downloads/Test_Interview/Test_Result/Yahoo_UI/Test_Report.html</msg>
+<arg>${job}[1]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-10-21T22:11:44.847887" elapsed="0.190581"/>
+</kw>
+<kw name="Save Page As Pdf" owner="Browser">
+<msg time="2026-10-21T22:11:45.222929" level="INFO">Pdf is saved to C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\Test_Report.pdf</msg>
+<arg>${job}[2]</arg>
+<arg>format=A4</arg>
+<arg>landscape=${job}[3]</arg>
+<arg>printBackground=True</arg>
+<arg>margin=${PDF_MARGIN}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Saves page as PDF.</doc>
+<status status="PASS" start="2026-10-21T22:11:45.038663" elapsed="0.184421"/>
+</kw>
+<kw name="Close Page" owner="Browser">
+<msg time="2026-10-21T22:11:45.225224" level="INFO">Closing current active page.</msg>
+<msg time="2026-10-21T22:11:45.228100" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<status status="PASS" start="2026-10-21T22:11:45.223265" elapsed="0.005130"/>
+</kw>
+<kw name="Remove File" owner="OperatingSystem">
+<msg time="2026-10-21T22:11:45.229199" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\Test_Report.html"&gt;C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\Test_Report.html&lt;/a&gt;'.</msg>
+<arg>${job}[0]</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2026-10-21T22:11:45.228611" elapsed="0.000649"/>
+</kw>
+<var name="${job}">['C:\\Users\\suraw\\Downloads\\Test_Interview\\Test_Result\\Yahoo_UI\\Test_Report.html', 'file:///C:/Users/suraw/Downloads/Test_Interview/Test_Result/Yahoo_UI/Test_Report.html', 'C:\\Users\\suraw\\Dow...</var>
+<status status="PASS" start="2026-10-21T22:11:44.847627" elapsed="0.381679"/>
+</iter>
+<iter>
+<kw name="New Page" owner="Browser">
+<msg time="2026-10-21T22:11:45.300808" level="INFO">Successfully initialized new page object and opened url: file:///C:/Users/suraw/Downloads/Test_Interview/Test_Result/Yahoo_UI/Defect_Report.html</msg>
+<arg>${job}[1]</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2026-10-21T22:11:45.229592" elapsed="0.071411"/>
+</kw>
+<kw name="Save Page As Pdf" owner="Browser">
+<msg time="2026-10-21T22:11:45.389567" level="INFO">Pdf is saved to C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\Defect_Report.pdf</msg>
+<arg>${job}[2]</arg>
+<arg>format=A4</arg>
+<arg>landscape=${job}[3]</arg>
+<arg>printBackground=True</arg>
+<arg>margin=${PDF_MARGIN}</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Saves page as PDF.</doc>
+<status status="PASS" start="2026-10-21T22:11:45.301263" elapsed="0.088449"/>
+</kw>
+<kw name="Close Page" owner="Browser">
+<msg time="2026-10-21T22:11:45.392387" level="INFO">Closing current active page.</msg>
+<msg time="2026-10-21T22:11:45.395281" level="INFO">Successfully closed Page with runBeforeUnload false</msg>
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<status status="PASS" start="2026-10-21T22:11:45.389934" elapsed="0.005552"/>
+</kw>
+<kw name="Remove File" owner="OperatingSystem">
+<msg time="2026-10-21T22:11:45.396277" level="INFO" html="true">Removed file '&lt;a href="file://C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\Defect_Report.html"&gt;C:\Users\suraw\Downloads\Test_Interview\Test_Result\Yahoo_UI\Defect_Report.html&lt;/a&gt;'.</msg>
+<arg>${job}[0]</arg>
+<doc>Removes a file with the given path.</doc>
+<status status="PASS" start="2026-10-21T22:11:45.395682" elapsed="0.000674"/>
+</kw>
+<var name="${job}">['C:\\Users\\suraw\\Downloads\\Test_Interview\\Test_Result\\Yahoo_UI\\Defect_Report.html', 'file:///C:/Users/suraw/Downloads/Test_Interview/Test_Result/Yahoo_UI/Defect_Report.html', 'C:\\Users\\suraw\...</var>
+<status status="PASS" start="2026-10-21T22:11:45.229426" elapsed="0.166983"/>
+</iter>
+<var>${job}</var>
+<value>@{jobs}</value>
+<status status="PASS" start="2026-10-21T22:11:44.847192" elapsed="0.549260"/>
+</for>
+<kw name="Close Browser" owner="Browser">
+<msg time="2026-10-21T22:11:45.454718" level="INFO">Closed browser</msg>
+<arg>CURRENT</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-10-21T22:11:45.396582" elapsed="0.058297"/>
+</kw>
+<arg>${REPORT_SUITE}</arg>
+<arg>Yahoo Create Account (UI)</arg>
+<status status="PASS" start="2026-10-21T22:11:44.728011" elapsed="0.726980"/>
+</kw>
+<status status="PASS" start="2026-10-21T22:11:44.593373" elapsed="0.861665"/>
+</kw>
+<doc>Yahoo create account - positive tests. Valid data is only typed in, never submitted with Next.
+Test data comes from yahoo_test_data.py and is passed to the keywords as arguments.</doc>
+<status status="PASS" start="2026-10-21T22:11:28.631034" elapsed="16.824033"/>
+</suite>
+<doc>UI tests of the Yahoo "Create account" page (https://login.yahoo.com/account/create).
+Only the on-screen validation is tested: no test completes (or tries to bypass) the registration.
+Page Object = Process_keyword/yahoo_create_account_page.resource, locators = Locator/yahoo_locators.resource.</doc>
+<status status="PASS" start="2026-10-21T22:11:28.104210" elapsed="17.353937"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="4" fail="0" skip="0">positive</stat>
+<stat pass="4" fail="0" skip="0">ui</stat>
+<stat pass="4" fail="0" skip="0">yahoo</stat>
+</tag>
+<suite>
+<stat name="Yahoo" id="s1" pass="4" fail="0" skip="0">Yahoo</stat>
+<stat name="Positive" id="s1-s1" pass="4" fail="0" skip="0">Yahoo.Positive</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

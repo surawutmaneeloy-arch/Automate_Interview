@@ -1,0 +1,11 @@
+node_modules/
+__pycache__/
+.venv/
+Test_Result/browser/
+Test_Result/playwright-log.txt
+playwright-log.txt
+browser/
+Test_Result/**/evidence/
+Test_Result/**/*.jsonl
+_*.png
+Test_Result/playwright-log*.txt
